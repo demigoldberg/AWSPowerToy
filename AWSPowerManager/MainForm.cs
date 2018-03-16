@@ -29,7 +29,10 @@ namespace AWSPowerManager
     
     public partial class MainForm : Form
     {
-        string version = "AWSPowermanager v1.3.0  27.10.2017"; //add info text on server + sg groups
+        string version = "AWSPowermanager v2.0  19.12.2017"; //add profiles + key name on create instance 
+        //string version = "AWSPowermanager v1.5.0  22.11.2017"; //create security group+ ippermissions
+        //string version = "AWSPowermanager v1.4.0  20.11.2017"; //create security group+ ippermissions
+        //string version = "AWSPowermanager v1.3.0  27.10.2017"; //add info text on server + sg groups
         //string version = "AWSPowermanager v1.2.0  27.10.2017"; //add ssh to server
         //string version = "AWSPowermanager v1.0.1  18.10.2017"; //fix bug - faild to load when no key and secret in registry
         //string version = "AWSPowermanager v1.0  7.6.2017"; //add preference for diffrent keys
@@ -42,6 +45,7 @@ namespace AWSPowerManager
         string SecretAccessKey="";
         string sshtool = "";
         string sshkey = "";
+        string DefaultProfile = "";
 
 
         AWSServices MyAWSService;
@@ -56,6 +60,8 @@ namespace AWSPowerManager
         int CH;
         int IW;
         int IH;
+
+        List<AWSServices.EC2Instance> ec2obj_list;
 
         //private PreferencesFrm Preform;
 
@@ -83,13 +89,16 @@ namespace AWSPowerManager
             {
                
                 Microsoft.Win32.RegistryKey AWSPowerManager = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("AWSPowerManager");
-                AccessKeyID = AWSPowerManager.GetValue("AccessKeyID").ToString();
-                SecretAccessKey = AWSPowerManager.GetValue("SecretAccessKey").ToString();
+                DefaultProfile = AWSPowerManager.GetValue("DefaultProfile").ToString();
+                Microsoft.Win32.RegistryKey AWSPowerManagerProfile = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("AWSPowerManager\\" + DefaultProfile);
+                AccessKeyID = AWSPowerManagerProfile.GetValue("AccessKeyID").ToString();
+                SecretAccessKey = AWSPowerManagerProfile.GetValue("SecretAccessKey").ToString();
                 sshtool = AWSPowerManager.GetValue("sshtool").ToString();
                 sshkey = AWSPowerManager.GetValue("sshkey").ToString();
+                AWSPowerManagerProfile.Close();
                 AWSPowerManager.Close();
+               
 
-                
             }
             catch (Exception ex)
             {
@@ -142,7 +151,7 @@ namespace AWSPowerManager
             EC2listView.Columns.Add("Id", 150, HorizontalAlignment.Left);
             EC2listView.Columns.Add("Tag Name", 150, HorizontalAlignment.Left);
             EC2listView.Columns.Add("State", 50, HorizontalAlignment.Left);
-            EC2listView.Columns.Add("Type", 100, HorizontalAlignment.Left);
+            EC2listView.Columns.Add("Type", 80, HorizontalAlignment.Left);
             EC2listView.Columns.Add("Platform", 80, HorizontalAlignment.Left);
             EC2listView.Columns.Add("Private DNS Name", 150, HorizontalAlignment.Left);
             EC2listView.Columns.Add("Private IP", 150, HorizontalAlignment.Left);
@@ -154,6 +163,7 @@ namespace AWSPowerManager
             EC2listView.Columns.Add("subnetID", 150, HorizontalAlignment.Left);
             EC2listView.Columns.Add("ImageID", 150, HorizontalAlignment.Left);
             EC2listView.Columns.Add("SecurityGroups", 300, HorizontalAlignment.Left);
+            EC2listView.Columns.Add("Volumes", 300, HorizontalAlignment.Left);
 
 
 
@@ -169,10 +179,24 @@ namespace AWSPowerManager
 
         public void CredInit()
         {
+           // Microsoft.Win32.RegistryKey AWSPowerManager = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("AWSPowerManager");
+           // AccessKeyID = AWSPowerManager.GetValue("AccessKeyID").ToString();
+           // SecretAccessKey = AWSPowerManager.GetValue("SecretAccessKey").ToString();
+           // AWSPowerManager.Close();
+
             Microsoft.Win32.RegistryKey AWSPowerManager = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("AWSPowerManager");
-            AccessKeyID = AWSPowerManager.GetValue("AccessKeyID").ToString();
-            SecretAccessKey = AWSPowerManager.GetValue("SecretAccessKey").ToString();
+            DefaultProfile = AWSPowerManager.GetValue("DefaultProfile").ToString();
+            Microsoft.Win32.RegistryKey AWSPowerManagerProfile = Microsoft.Win32.Registry.CurrentUser.OpenSubKey("AWSPowerManager\\" + DefaultProfile);
+            AccessKeyID = AWSPowerManagerProfile.GetValue("AccessKeyID").ToString();
+            SecretAccessKey = AWSPowerManagerProfile.GetValue("SecretAccessKey").ToString();
+            sshtool = AWSPowerManager.GetValue("sshtool").ToString();
+            sshkey = AWSPowerManager.GetValue("sshkey").ToString();
+            AWSPowerManagerProfile.Close();
             AWSPowerManager.Close();
+
+
+
+
 
             Amazon.Util.ProfileManager.RegisterProfile("DemiProfile", AccessKeyID, SecretAccessKey);
             credentials = new Amazon.Runtime.StoredProfileAWSCredentials("DemiProfile");
@@ -236,7 +260,8 @@ namespace AWSPowerManager
 
                     //ec2 = new AmazonEC2Client();
                    // List<string> ec2inst_list = MyAWSService.WriteEC2Info(ec2);
-                    List<AWSServices.EC2Instance> ec2obj_list = MyAWSService.GetEC2InstanceList(ec2);
+                    //List<AWSServices.EC2Instance>
+                    ec2obj_list = MyAWSService.GetEC2InstanceList(ec2);
                     //MyAWSService.WriteEC2Info(ec2);
                     //MyAWSService.GetEC2InstanceList(ec2);
 
@@ -266,6 +291,14 @@ namespace AWSPowerManager
                         }
 
                         lvitem.SubItems.Add(sgstr);
+
+                        string bdstr = "";
+                        foreach (string bd in ec2obj.getBlockDevice())
+                        {
+                            bdstr = bdstr + bd + ",";
+                        }
+
+                        lvitem.SubItems.Add(bdstr);
 
                         // lvitem.SubItems.Add(ec2obj.getTokenName());
 
@@ -494,15 +527,13 @@ namespace AWSPowerManager
 
             if (sshkey.Length > 0)
             {
-                args = "-i " + sshkey + " " + host;
+                args = host + " -i " + sshkey ;
             }
             else
             {
                 args = host;
 
             }
-
-
 
             Process proc = new Process
                 {
@@ -531,8 +562,25 @@ namespace AWSPowerManager
         }
 
 
+        private void sSHPublicIPToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
-        private void rebootToolStripMenuItem_Click(object sender, EventArgs e)
+            string col = EC2listView.SelectedItems[0].SubItems[8].Text;
+            if (col != "")
+            {
+                SSHtoHost(col, sshtool, sshkey);
+
+            }
+            else
+            {
+                MessageBox.Show("No public IP");
+            }
+
+        }
+
+   
+
+            private void rebootToolStripMenuItem_Click(object sender, EventArgs e)
         {
             string ReturnMsg = "";
 
@@ -644,6 +692,7 @@ namespace AWSPowerManager
 
         private void createImageToolStripMenuItem_Click(object sender, EventArgs e)
         {
+           
             string ReturnMsg="";
             foreach (ListViewItem lvitem in EC2listView.SelectedItems)
             {
@@ -656,7 +705,7 @@ namespace AWSPowerManager
 
             if (ReturnMsg != "Done") {
 
-                MessageBox.Show("Problem: " + ReturnMsg);
+                MessageBox.Show("MSG: " + ReturnMsg);
 
             }
             refreshToolStripMenuItem_Click(sender, e);
@@ -668,20 +717,24 @@ namespace AWSPowerManager
         {
             //(IAmazonEC2 ec2, string ami,string subnetid,string Key,string insttype,string secgroupid)
             string ReturnMsg = "";
+            string instId="";
             foreach (ListViewItem lvitem in EC2listView.SelectedItems)
             {
-                string instId = lvitem.SubItems[0].Text;
-                string subnetId = lvitem.SubItems[11].Text;
-                string amiId = lvitem.SubItems[12].Text;
-                string key = lvitem.SubItems[10].Text;
-                string insttype = lvitem.SubItems[3].Text;
-                string gsecid = lvitem.SubItems[13].Text;
-                gsecid.Replace(",", "");
-                ReturnMsg = MyAWSService.lunchInstance(ec2,amiId,subnetId,key,insttype,gsecid);
+                instId = lvitem.SubItems[0].Text;
+                //string subnetId = lvitem.SubItems[12].Text;
+                //string amiId = lvitem.SubItems[13].Text;
+                //string key = lvitem.SubItems[11].Text;
+                //string insttype = lvitem.SubItems[3].Text;
+                //string gsecid = lvitem.SubItems[14].Text;
+                //List<string> gseclist = gsecid.Split(',').ToList(); 
+                //gsecid.Replace(",", "");
+                Random rnd = new Random();
+                AWSServices.EC2Instance selectedobj;
+                selectedobj = ec2obj_list.Find(ec2inst => ec2inst.getid() == instId);
+                ReturnMsg = MyAWSService.lunchInstance(ec2, selectedobj.getAmiId(), selectedobj.getSubnetId(), selectedobj.getKeyName(), selectedobj.getType(), selectedobj.getSG(), false, selectedobj.getVpcId(),"","",selectedobj.getName() + rnd,0);
             }
 
-            //string instId = EC2listView.SelectedItems[0].SubItems[0].Text;
-            //MyAWSService.StopInstance(ec2, instId);
+           
 
             if (ReturnMsg != "Done")
             {
@@ -690,6 +743,97 @@ namespace AWSPowerManager
 
             }
             refreshToolStripMenuItem_Click(sender, e);
+
+        }
+
+
+        private void newInstanceLikeThisWithChangesToolStripMenuItem_Click(object sender, EventArgs e)
+            // new instance + change type 
+        {
+            AWSServices.EC2Instance selectedobj;
+            InstanceConfigFrm itypeConfigForm = new InstanceConfigFrm();
+           
+            string ReturnMsg = "";
+            string instId = "";
+            itypeConfigForm.ShowDialog();
+
+
+            
+            string itype = itypeConfigForm.InstTypeslistBox.GetItemText(itypeConfigForm.InstTypeslistBox.SelectedItem);
+            string pubiptxt = itypeConfigForm.PubIPcomboBox.Text;
+            string myami = itypeConfigForm.AMItextBox.Text;
+            string newSG = itypeConfigForm.SGtextBox.Text;
+            string keyName = itypeConfigForm.KeytextBox.Text;
+            string privateIP = itypeConfigForm.PrivateIPtextBox.Text;
+            string nametag = itypeConfigForm.InstNametextBox.Text;
+            string subnetid = itypeConfigForm.SubnetIdtextBox.Text;
+
+            int rootDiskSize;
+            if (itypeConfigForm.RoodDiskSizetextBox.Text.Length != 0 )
+            {
+                rootDiskSize = int.Parse(itypeConfigForm.RoodDiskSizetextBox.Text);
+            }
+            else
+            {
+                rootDiskSize = 0;
+            }
+
+            bool pubipbool=false;
+            if (pubiptxt == "True")
+            {
+                pubipbool = true;
+
+            }
+            else
+                pubipbool = false;
+
+           
+
+
+
+            foreach (ListViewItem lvitem in EC2listView.SelectedItems)
+            {
+                instId = lvitem.SubItems[0].Text;
+            
+                selectedobj = ec2obj_list.Find(ec2inst => ec2inst.getid() == instId);
+                if (myami.Length == 0)
+                {
+                    myami = selectedobj.getAmiId();
+
+                }
+
+                if (keyName.Length == 0)
+                {
+                    keyName = selectedobj.getKeyName();
+
+                }
+
+                if (itype.Length ==0)
+                {
+                    itype = selectedobj.getType();
+
+                }
+
+                if ( subnetid.Length == 0)
+                {
+                    subnetid = selectedobj.getSubnetId();
+                }
+
+
+                ReturnMsg = MyAWSService.lunchInstance(ec2, myami, subnetid, keyName, itype, selectedobj.getSG(), pubipbool,selectedobj.getVpcId(),newSG,privateIP, nametag, rootDiskSize);
+            }
+
+
+
+            if (ReturnMsg != "Done")
+            {
+
+                MessageBox.Show("Problem: " + ReturnMsg);
+
+            }
+            refreshToolStripMenuItem_Click(sender, e);
+
+
 
         }
 
@@ -762,7 +906,7 @@ namespace AWSPowerManager
 
         private void modifyInstanceTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            InstanceTypesFrm itypesForm = new InstanceTypesFrm();
+            InstanceConfigFrm itypesForm = new InstanceConfigFrm();
             List<string> EC2Types =  new List<string> { };
             EC2Types = MyAWSService.GetListOfEC2Types();
 
@@ -816,7 +960,21 @@ namespace AWSPowerManager
 
         }
 
-       
+        private void addDiskToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VolumeFrm VolFrm = new VolumeFrm();
+
+            VolFrm.ShowDialog();
+            string volname = VolFrm.VolNametextBox.Text;
+            int volsize = int.Parse(VolFrm.SizetextBox.Text);
+
+            foreach (ListViewItem lvitem in EC2listView.SelectedItems)
+            {
+                string instId = lvitem.SubItems[0].Text;
+                MyAWSService.AddVolume(ec2,instId, volname, volsize);
+            }
+
+        }
     }
 }
 

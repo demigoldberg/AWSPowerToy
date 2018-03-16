@@ -499,6 +499,25 @@
             </param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
+        <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketEncryption(Amazon.S3.Model.DeleteBucketEncryptionRequest)">
+            <summary>
+            Deletes the server-side encryption configuration from the bucket.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
+            
+            <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketEncryptionAsync(Amazon.S3.Model.DeleteBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
         <member name="M:Amazon.S3.AmazonS3Client.DeleteBucketInventoryConfiguration(Amazon.S3.Model.DeleteBucketInventoryConfigurationRequest)">
             <summary>
             Deletes an inventory configuration (identified by the inventory ID) from the bucket.
@@ -950,6 +969,25 @@
             </summary>
             
             <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Amazon.S3.AmazonS3Client.GetBucketEncryption(Amazon.S3.Model.GetBucketEncryptionRequest)">
+            <summary>
+            Returns the server-side encryption configuration of a bucket.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
+            
+            <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.AmazonS3Client.GetBucketEncryptionAsync(Amazon.S3.Model.GetBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the GetBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetBucketEncryption operation.</param>
             <param name="cancellationToken">
                 A cancellation token that can be used by other objects or threads to receive notice of cancellation.
             </param>
@@ -2091,6 +2129,26 @@
             </param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
+        <member name="M:Amazon.S3.AmazonS3Client.PutBucketEncryption(Amazon.S3.Model.PutBucketEncryptionRequest)">
+            <summary>
+            Creates a new server-side encryption configuration (or replaces an existing one, if
+            present).
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
+            
+            <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.AmazonS3Client.PutBucketEncryptionAsync(Amazon.S3.Model.PutBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the PutBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutBucketEncryption operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
         <member name="M:Amazon.S3.AmazonS3Client.PutBucketInventoryConfiguration(Amazon.S3.Model.PutBucketInventoryConfigurationRequest)">
             <summary>
             Adds an inventory configuration (identified by the inventory ID) from the bucket.
@@ -2834,1158 +2892,6 @@
             <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
             <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
         </member>
-        <member name="T:Amazon.S3.AnalyticsS3ExportFileFormat">
-            <summary>
-            The file format used when exporting data to Amazon S3.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.AnalyticsS3ExportFileFormat.CSV">
-            <summary>
-            CSV file format.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.#ctor(System.String)">
-            <summary>
-            Construct instance of AnalyticsS3ExportFileFormat. 
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.op_Implicit(System.String)~Amazon.S3.AnalyticsS3ExportFileFormat">
-            <summary>
-            Converts the string to an AnalyticsS3ExportFileFormat.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.BucketAccelerateStatus">
-            <summary>
-            Represents the accelerate status for a bucket.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.BucketAccelerateStatus.Enabled">
-            <summary>
-            Bucket acceleration is enabled.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.BucketAccelerateStatus.Suspended">
-            <summary>
-            Bucket acceleration is suspended.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.BucketAccelerateStatus.#ctor(System.String)">
-            <summary>
-            Construct instance of BucketAccelerateStatus. It is not intended for this constructor to be called. Instead users should call the FindValue.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.BucketAccelerateStatus.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.BucketAccelerateStatus.op_Implicit(System.String)~Amazon.S3.BucketAccelerateStatus">
-            <summary>
-            Converts the string to an BucketAccelerateStatus
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.S3CannedACL">
-            <summary>
-            A list of all possible CannedACLs that can be used
-            for S3 Buckets or S3 Objects. For more information about CannedACLs, refer to
-            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTAccessPolicy.html#RESTCannedAccessPolicies"/>.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.NoACL">
-            <summary>
-            Owner gets FULL_CONTROL.
-            No one else has access rights (default).
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.Private">
-            <summary>
-            Owner gets FULL_CONTROL.
-            No one else has access rights (default).
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.PublicRead">
-            <summary>
-            Owner gets FULL_CONTROL and the anonymous principal is granted READ access.
-            If this policy is used on an object, it can be read from a browser with no authentication.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.PublicReadWrite">
-            <summary>
-            Owner gets FULL_CONTROL, the anonymous principal is granted READ and WRITE access.
-            This can be a useful policy to apply to a bucket, but is generally not recommended.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.AuthenticatedRead">
-            <summary>
-            Owner gets FULL_CONTROL, and any principal authenticated as a registered Amazon
-            S3 user is granted READ access.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.AWSExecRead">
-            <summary>
-            Owner gets FULL_CONTROL. Amazon EC2 gets READ access to GET an
-            Amazon Machine Image (AMI) bundle from Amazon S3.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.BucketOwnerRead">
-            <summary>
-            Object Owner gets FULL_CONTROL, Bucket Owner gets READ
-            This ACL applies only to objects and is equivalent to private when used with PUT Bucket. 
-            You use this ACL to let someone other than the bucket owner write content (get full control) 
-            in the bucket but still grant the bucket owner read access to the objects.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.BucketOwnerFullControl">
-            <summary>
-            Object Owner gets FULL_CONTROL, Bucket Owner gets FULL_CONTROL.
-            This ACL applies only to objects and is equivalent to private when used with PUT Bucket. 
-            You use this ACL to let someone other than the bucket owner write content (get full control) 
-            in the bucket but still grant the bucket owner full rights over the objects.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3CannedACL.LogDeliveryWrite">
-            <summary>
-            The LogDelivery group gets WRITE and READ_ACP permissions on the bucket.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.S3CannedACL.#ctor(System.String)">
-            <summary>
-            Construct instance of S3CannedACL. It is not intended for this constructor to be called. Instead users should call the FindValue.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.S3CannedACL.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.S3CannedACL.op_Implicit(System.String)~Amazon.S3.S3CannedACL">
-            <summary>
-            Converts the string to an S3CannedACL
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.S3Region">
-            <summary>
-            A list of all possible S3 Bucket region possibilities. For
-            more information, refer to 
-            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/BucketConfiguration.html#LocationSelection"/>.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.US">
-            <summary>
-            Specifies that the S3 Bucket should use US locality.
-            This is the default value.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.USE2">
-            <summary>
-            Specifies that the S3 Bucket should use US-EAST-2 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.EU">
-            <summary>
-            Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.EUW1">
-            <summary>
-            Specifies that the S3 Bucket should use the EU-WEST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.EUW2">
-            <summary>
-            Specifies that the S3 Bucket should use the EU-WEST-2 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.EUC1">
-            <summary>
-            Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.USW1">
-            <summary>
-            Specifies that the S3 Bucket should use US-WEST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.USW2">
-            <summary>
-            Specifies that the S3 Bucket should use US-WEST-2 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.GOVW1">
-            <summary>
-            Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.APS1">
-            <summary>
-            Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.APS2">
-            <summary>
-            Specifies that the S3 Bucket should use the AP-SOUTHEAST-2 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.APN1">
-            <summary>
-            Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.APN2">
-            <summary>
-            Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.APS3">
-            <summary>
-            Specifies that the S3 Bucket should use the AP-SOUTH-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.SAE1">
-            <summary>
-            Specifies that the S3 Bucket should use the SA-EAST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.CN1">
-            <summary>
-            Specifies that the S3 Bucket should use CN-NORTH-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.CAN1">
-            <summary>
-            Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.SFO">
-            <summary>
-            Specifies that the S3 Bucket should use US-WEST-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.CN">
-            <summary>
-            Specifies that the S3 Bucket should use CN-NORTH-1 locality.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Region.GOV">
-            <summary>
-            Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.S3Region.#ctor(System.String)">
-            <summary>
-            Construct instance of S3Region. It is not intended for this constructor to be called. Instead users should call the FindValue.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.S3Region.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.S3Region.op_Implicit(System.String)~Amazon.S3.S3Region">
-            <summary>
-            Converts the string to the S3Region class
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.S3Permission">
-            <summary>
-            A list of all ACL permissions. For more information, refer to
-            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_ACLs.html#S3_ACLs_Permissions"/>.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.READ">
-            <summary>
-            When applied to a bucket, grants permission to list the bucket.
-            When applied to an object, this grants permission to read the
-            object data and/or metadata.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.WRITE">
-            <summary>
-            When applied to a bucket, grants permission to create, overwrite,
-            and delete any object in the bucket. This permission is not
-            supported for objects.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.READ_ACP">
-            <summary>
-            Grants permission to read the ACL for the applicable bucket or object.
-            The owner of a bucket or object always has this permission implicitly.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.WRITE_ACP">
-            <summary>
-            Gives permission to overwrite the ACP for the applicable bucket or object.
-            The owner of a bucket or object always has this permission implicitly.
-            Granting this permission is equivalent to granting FULL_CONTROL because
-            the grant recipient can make any changes to the ACP.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.FULL_CONTROL">
-            <summary>
-            Provides READ, WRITE, READ_ACP, and WRITE_ACP permissions.
-            It does not convey additional rights and is provided only for convenience.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3Permission.RESTORE_OBJECT">
-            <summary>
-            Gives permission to restore an object that is currently stored in Amazon Glacier
-            for archival storage.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.S3Permission.#ctor(System.String)">
-            <summary>
-            Construct S3Permission.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.S3Permission.#ctor(System.String,System.String)">
-            <summary>
-            Construct instance of S3Permission. It is not intended for this constructor to be called. Instead users should call the FindValue.
-            </summary>
-            <param name="value"></param>
-            <param name="headerName"></param>
-        </member>
-        <member name="P:Amazon.S3.S3Permission.HeaderName">
-            <summary>
-            Gets and sets the HeaderName property.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.S3Permission.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.S3Permission.op_Implicit(System.String)~Amazon.S3.S3Permission">
-            <summary>
-            Converts the string to an S3Permission
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.S3MetadataDirective">
-            <summary>
-            An enumeration of all Metadata directives that
-            can be used for the CopyObject operation.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3MetadataDirective.COPY">
-            <summary>
-            Specifies that the metadata is copied from the source object.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3MetadataDirective.REPLACE">
-            <summary>
-            Specifies that the metadata is replaced with metadata provided in the request.
-            All original metadata is replaced by the metadata you specify.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Protocol">
-            <summary>
-            An enumeration of all protocols that the pre-signed
-            URL can be created against.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.Protocol.HTTPS">
-            <summary>
-            https protocol will be used in the pre-signed URL.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.Protocol.HTTP">
-            <summary>
-            http protocol will be used in the pre-signed URL.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.HttpVerb">
-            <summary>
-            An enumeration of supported HTTP verbs
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.HttpVerb.GET">
-            <summary>
-            The GET HTTP verb.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.HttpVerb.HEAD">
-            <summary>
-            The HEAD HTTP verb.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.HttpVerb.PUT">
-            <summary>
-            The PUT HTTP verb.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.HttpVerb.DELETE">
-            <summary>
-            The DELETE HTTP verb.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.S3StorageClass">
-            <summary>
-            Specifies the Storage Class of of an S3 object. Possible values
-            are: <list type="bullet">
-            <item>ReducedRedundancy: provides a 99.99% durability guarantee</item>
-            <item>Standard: provides a 99.999999999% durability guarantee</item>
-            </list>
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3StorageClass.Standard">
-            <summary>
-            The STANDARD storage class, which is the default
-            storage class for S3 objects. Provides a 99.999999999%
-            durability guarantee.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3StorageClass.ReducedRedundancy">
-            <summary>
-            The REDUCED_REDUNDANCY storage class for S3 objects. This
-            provides a reduced (99.99%) durability guarantee at a lower
-            cost as compared to the STANDARD storage class. Use this
-            storage class for non-mission critical data or for data 
-            that doesn’t require the higher level of durability that S3
-            provides with the STANDARD storage class.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3StorageClass.Glacier">
-            <summary>
-            The GLACIER storage is for object that are stored in Amazon Glacier.
-            This storage class is for objects that are for archival purpose and 
-            get operations are rare.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.S3StorageClass.StandardInfrequentAccess">
-            <summary>
-            The STANDARD_IA storage is for infrequently accessed objects.
-            This storage class is for objects that are long-lived and less frequently accessed,
-            like backups and older data.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.S3StorageClass.#ctor(System.String)">
-            <summary>
-            Construct an instance of S3StorageClass.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.S3StorageClass.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.S3StorageClass.op_Implicit(System.String)~Amazon.S3.S3StorageClass">
-            <summary>
-            Convert string to S3StorageClass.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.NotificationEvents">
-            <summary>
-            The constants for the known event names used by S3 notification. S3 might add new
-            events before the SDK is updated. In which case the names listed in the S3 documentation
-            will work as well as these constants.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.NotificationEvents.ReducedRedundancyLostObject">
-            <summary>
-            An event that says an object has been lost in the reduced redundancy storage.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.ServerSideEncryptionCustomerMethod">
-            <summary>
-            A list of all server-side encryption methods for customer provided encryption keys.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ServerSideEncryptionCustomerMethod.None">
-            <summary>
-            No server side encryption to be used.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ServerSideEncryptionCustomerMethod.AES256">
-            <summary>
-            Use AES 256 server side encryption.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.#ctor(System.String)">
-            <summary>
-            Constructs an instance of ServerSideEncryptionCustomerMethod.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.op_Implicit(System.String)~Amazon.S3.ServerSideEncryptionCustomerMethod">
-            <summary>
-            Converts string to ServerSideEncryptionCustomerMethod.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.ServerSideEncryptionMethod">
-            <summary>
-            A list of all server-side encryption methods.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ServerSideEncryptionMethod.None">
-            <summary>
-            No server side encryption to be used.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ServerSideEncryptionMethod.AES256">
-            <summary>
-            Use AES 256 server side encryption.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ServerSideEncryptionMethod.AWSKMS">
-            <summary>
-            Use AWS Key Management Service for server side encryption.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionMethod.#ctor(System.String)">
-            <summary>
-            Construct instance of ServerSideEncryptionMethod.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionMethod.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.ServerSideEncryptionMethod.op_Implicit(System.String)~Amazon.S3.ServerSideEncryptionMethod">
-            <summary>
-            Convert string to ServerSideEncryptionCustomerMethod.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.GranteeType">
-            <summary>
-            A list of all grantee types.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GranteeType.Group">
-            <summary>
-            The predefined group.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GranteeType.Email">
-            <summary>
-            The email address of an AWS account
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GranteeType.CanonicalUser">
-            <summary>
-            The canonical user ID of an AWS account
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.GranteeType.#ctor(System.String)">
-            <summary>
-            Construct an instance of GranteeType.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.GranteeType.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.GranteeType.op_Implicit(System.String)~Amazon.S3.GranteeType">
-            <summary>
-            Convert a string to GranteeType.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.LifecycleRuleStatus">
-            <summary>
-            A list of all lifecycle statuses.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.LifecycleRuleStatus.Enabled">
-            <summary>
-            The rule is enabled.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.LifecycleRuleStatus.Disabled">
-            <summary>
-            The rule is disabled.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.LifecycleRuleStatus.#ctor(System.String)">
-            <summary>
-            Constructs an instance LifecycleRuleStatus.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.LifecycleRuleStatus.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.LifecycleRuleStatus.op_Implicit(System.String)~Amazon.S3.LifecycleRuleStatus">
-            <summary>
-            Convert string to LifecycleRuleStatus.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.VersionStatus">
-            <summary>
-            A list of all version statuses.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.VersionStatus.Off">
-            <summary>
-            The rule is off.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.VersionStatus.Suspended">
-            <summary>
-            The rule is suspended.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.VersionStatus.Enabled">
-            <summary>
-            The rule is enabled.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.VersionStatus.#ctor(System.String)">
-            <summary>
-            Construct an instance of VersionStatus.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.VersionStatus.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.VersionStatus.op_Implicit(System.String)~Amazon.S3.VersionStatus">
-            <summary>
-            Convert string to VersionStatus.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.EncodingType">
-            <summary>
-            A list of all encoding types.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EncodingType.Url">
-            <summary>
-            Url encoding.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.EncodingType.#ctor(System.String)">
-            <summary>
-            Constructs intance of EncodingType
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.EncodingType.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.EncodingType.op_Implicit(System.String)~Amazon.S3.EncodingType">
-            <summary>
-            Converts string to EncodingType
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.EventType">
-            <summary>
-            A list of all event types that can configured with the bucket notification configuration.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectCreatedAll">
-            <summary>
-            The event encapsulates all the object create events
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectCreatedPut">
-            <summary>
-            Event for put operations
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectCreatedPost">
-            <summary>
-            Event for post operations
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectCreatedCopy">
-            <summary>
-            Event for copy operations
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectCreatedCompleteMultipartUpload">
-            <summary>
-            Event for completing a multi part upload
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectRemovedAll">
-            <summary>
-            This event encapsulates all the object removed events
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectRemovedDelete">
-            <summary>
-            Event for object removed, delete operation.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ObjectRemovedDeleteMarkerCreated">
-            <summary>
-            Event for object removed, delete marker created operation.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.EventType.ReducedRedundancyLostObject">
-            <summary>
-            Event for objects stored in reduced redundancy and S3 detects the object is lost
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.EventType.#ctor(System.String)">
-            <summary>
-            Constructs instance of EventType.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.EventType.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.EventType.op_Implicit(System.String)~Amazon.S3.EventType">
-            <summary>
-            Convert string to EventType.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.InventoryFormat">
-            <summary>
-            A list of all Inventory Formats.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryFormat.CSV">
-            <summary>
-             CSV inventory format
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.InventoryFormat.#ctor(System.String)">
-            <summary>
-            Construct instance of InventoryFormat.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.InventoryFormat.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the InventoryFormat.</param>
-            <returns>The InventoryFormat object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.InventoryFormat.op_Implicit(System.String)~Amazon.S3.InventoryFormat">
-            <summary>
-            Convert string to InventoryFormat.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.InventoryIncludedObjectVersions">
-            <summary>
-            A list of inventory included object versions.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryIncludedObjectVersions.All">
-            <summary>
-             All Inventory Included Object Versions
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryIncludedObjectVersions.Current">
-            <summary>
-             Current Inventory Included Object Versions
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.#ctor(System.String)">
-            <summary>
-            Construct instance of InventoryIncludedObjectVersions.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the InventoryIncludedObjectVersions.</param>
-            <returns>The InventoryIncludedObjectVersions object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.op_Implicit(System.String)~Amazon.S3.InventoryIncludedObjectVersions">
-            <summary>
-            Convert string to InventoryIncludedObjectVersions.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.InventoryFrequency">
-            <summary>
-            A list of inventory frequencies.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryFrequency.Daily">
-            <summary>
-             Daily Inventory Frequency
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryFrequency.Weekly">
-            <summary>
-             Weekly Inventory Frequency
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.InventoryFrequency.#ctor(System.String)">
-            <summary>
-            Construct instance of InventoryFrequency.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.InventoryFrequency.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the InventoryFrequency.</param>
-            <returns>The InventoryFrequency object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.InventoryFrequency.op_Implicit(System.String)~Amazon.S3.InventoryFrequency">
-            <summary>
-            Convert string to InventoryFrequency.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.InventoryOptionalField">
-            <summary>
-            A list of inventory optional fields.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.Size">
-            <summary>
-             InventoryOptionalField for Size
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.LastModifiedDate">
-            <summary>
-             InventoryOptionalField for LastModifiedDate
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.StorageClass">
-            <summary>
-             InventoryOptionalField for StorageClass
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.ETag">
-            <summary>
-             InventoryOptionalField for ETag
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.IsMultipartUploaded">
-            <summary>
-             InventoryOptionalField for IsMultipartUploaded
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.InventoryOptionalField.ReplicationStatus">
-            <summary>
-             InventoryOptionalField for ReplicationStatus
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.InventoryOptionalField.#ctor(System.String)">
-            <summary>
-            Construct instance of InventoryOptionalField.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.InventoryOptionalField.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the InventoryOptionalField.</param>
-            <returns>The InventoryIncludedObjectVersions object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.InventoryOptionalField.op_Implicit(System.String)~Amazon.S3.InventoryOptionalField">
-            <summary>
-            Convert string to InventoryOptionalField.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.ReplicationStatus">
-            <summary>
-            The status of the replication job associated with this source object.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationStatus.Pending">
-            <summary>
-             The object is pending replication.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationStatus.Completed">
-            <summary>
-            The object has been replicated.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationStatus.Replica">
-            <summary>
-            The object was created as a result of replication.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationStatus.Failed">
-            <summary>
-             The object replication has failed due to a customer-attributable reason, and the replication will not be attempted again.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.ReplicationStatus.#ctor(System.String)">
-            <summary>
-            Construct instance of ReplicationStatus.
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.ReplicationStatus.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the ReplicationStatus.</param>
-            <returns>The ReplicationStatus object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.ReplicationStatus.op_Implicit(System.String)~Amazon.S3.ReplicationStatus">
-            <summary>
-            Convert string to ReplicationStatus.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.ReplicationRuleStatus">
-            <summary>
-            Whether a replication rule is applied or ignored.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationRuleStatus.Enabled">
-            <summary>
-            The rule will be applied.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.ReplicationRuleStatus.Disabled">
-            <summary>
-            The rule will be ignored.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.ReplicationRuleStatus.#ctor(System.String)">
-            <summary>
-            Construct instance of ReplicationRuleStatus
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.ReplicationRuleStatus.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the ReplicationRuleStatus.</param>
-            <returns>The ReplicationRuleStatus object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.ReplicationRuleStatus.op_Implicit(System.String)~Amazon.S3.ReplicationRuleStatus">
-            <summary>
-            Convert string to ReplicationRuleStatus.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.TaggingDirective">
-            <summary>
-            Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.TaggingDirective.COPY">
-            <summary>
-            The object tag-set is copied from the source object.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.TaggingDirective.REPLACE">
-            <summary>
-            The object tag-set is replaced with tag-set provided in the request.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.TaggingDirective.#ctor(System.String)">
-            <summary>
-            Construct instance of TaggingDirective
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.TaggingDirective.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the TaggingDirective.</param>
-            <returns>The TaggingDirective object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.TaggingDirective.op_Implicit(System.String)~Amazon.S3.TaggingDirective">
-            <summary>
-            Convert string to TaggingDirective.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.GlacierJobTier">
-            <summary>
-            All enumerations type for retrieval tier for Glacier restore.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GlacierJobTier.Standard">
-            <summary>
-            Standard Tier for Glacier restore.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GlacierJobTier.Bulk">
-            <summary>
-            Bulk Tier for Glacier restore.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.GlacierJobTier.Expedited">
-            <summary>
-            Expedited Tier for Glacier restore.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.GlacierJobTier.#ctor(System.String)">
-            <summary>
-            Construct instance of RestoreObjectRequestGlacierJobTier
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.GlacierJobTier.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the RestoreObjectRequestGlacierJobTier.</param>
-            <returns>The RestoreObjectRequestGlacierJobTier object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.GlacierJobTier.op_Implicit(System.String)~Amazon.S3.GlacierJobTier">
-            <summary>
-            Convert string to RestoreObjectRequestGlacierJobTier.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.StorageClassAnalysisSchemaVersion">
-            <summary>
-            The version of the output schema to use when exporting data.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.StorageClassAnalysisSchemaVersion.V_1">
-            <summary>
-            The schema output version V_1.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.#ctor(System.String)">
-            <summary>
-            Construct instance of StorageClassAnalysisSchemaVersion
-            </summary>
-            <param name="value"></param>
-        </member>
-        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.FindValue(System.String)">
-            <summary>
-            Finds the constant for the unique value.
-            </summary>
-            <param name="value">The string representation of the StorageClassAnalysisSchemaVersion.</param>
-            <returns>The StorageClassAnalysisSchemaVersion object for that string.</returns>
-        </member>
-        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.op_Implicit(System.String)~Amazon.S3.StorageClassAnalysisSchemaVersion">
-            <summary>
-            Convert string to StorageClassAnalysisSchemaVersion.
-            </summary>
-            <param name="value"></param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.RequestPayer">
-            <summary>
-            Acknowledges that requester pays for the operation.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.RequestPayer.Requester">
-            <summary>
-            Requester pays for the operation.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.RequestPayer.FindValue(System.String)">
-            <summary>
-            Finds the RequestPayer instance for the string value.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.RequestPayer.op_Implicit(System.String)~Amazon.S3.RequestPayer">
-            <summary>
-            Converts string to RequestPayer instance
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.RequestCharged">
-            <summary>
-            The response from S3 that it confirms that requester pays.
-            </summary>
-        </member>
-        <member name="F:Amazon.S3.RequestCharged.Requester">
-            <summary>
-            S3 acknowledges that the requester pays.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.RequestCharged.FindValue(System.String)">
-            <summary>
-            Finds the RequestCharged instance for the string value
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.RequestCharged.op_Implicit(System.String)~Amazon.S3.RequestCharged">
-            <summary>
-             converts the string to RequestCharged instance
-            </summary>
-        </member>
         <member name="T:Amazon.S3.Internal.AmazonS3ExceptionHandler">
             <summary>
             Custom pipeline handler to clean up streams in case of an exception.
@@ -4196,6 +3102,16 @@
             The accelerate status of the bucket.
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.AccessControlTranslation">
+            <summary>
+            AccessControlTranslation class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.AccessControlTranslation.Owner">
+            <summary>
+            The override value for the owner of the replica object.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.AnalyticsAndOperator">
             <summary>
             Class for AnalyticsAndOperator
@@ -4277,16 +3193,6 @@
         <member name="T:Amazon.S3.Model.Internal.IMetricsPredicateVisitor">
             <summary>
             Interface for implementing visitor pattern in Metrics Predicate Filter.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.Internal.InventoryPredicateVisitor">
-            <summary>
-            Internal implementation of Inventory Predicate visitor interface.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.Internal.MetricsPredicateVisitor">
-            <summary>
-            Internal implementation of Metrics Predicate visitor interface.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.Internal.ILifecyclePredicateVisitor">
@@ -4803,6 +3709,11 @@
               InventoryDestination Unmarshaller
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.InventoryEncryptionUnmarshaller">
+            <summary>
+              InventoryEncryption Unmarshaller
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.InventoryFilterUnmarshaller">
             <summary>
               InventoryFilter Unmarshaller
@@ -5218,6 +4129,11 @@
             True if a node was read, false if there are no more elements to read./
             </returns>
         </member>
+        <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.SSEKMSUnmarshaller">
+            <summary>
+              SSEKMS Unmarshaller
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.StorageClassAnalysisDataExportUnmarshaller">
             <summary>
             StorageClassAnalysisDataExportDataExportUnmarshaller
@@ -5226,11 +4142,6 @@
         <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.StorageClassAnalysisUnmarshaller">
             <summary>
              StorageClassAnalysisUnmarshaller
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.TaggedResourceUnmarshaller">
-            <summary>
-            TaggedResource Unmarshaller
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.TagUnmarshaller">
@@ -5261,6 +4172,16 @@
         <member name="T:Amazon.S3.Model.Internal.MarshallTransformations.VersionsItemUnmarshaller">
             <summary>
               VersionsItem Unmarshaller
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.Internal.InventoryPredicateVisitor">
+            <summary>
+            Internal implementation of Inventory Predicate visitor interface.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.Internal.MetricsPredicateVisitor">
+            <summary>
+            Internal implementation of Metrics Predicate visitor interface.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.AnalyticsPrefixPredicate">
@@ -6295,6 +5216,71 @@
             </summary>
             <returns>true if AllowedHeaders property is set.</returns>
         </member>
+        <member name="T:Amazon.S3.Model.CSVInput">
+            <summary>
+            Describes how a CSV-formatted input object is formatted.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.FileHeaderInfo">
+            <summary>
+            Describes the first line of input. Valid values: None, Ignore, Use.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.Comments">
+            <summary>
+            Single character used to indicate a row should be ignored when present at the start of a row.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.QuoteEscapeCharacter">
+            <summary>
+            Single character used for escaping the quote character inside an already escaped value.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.RecordDelimiter">
+            <summary>
+            Value used to separate individual records.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.FieldDelimiter">
+            <summary>
+            Value used to separate individual fields in a record.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVInput.QuoteCharacter">
+            <summary>
+            Value used for escaping where the field delimiter is part of the value.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.CSVOutput">
+            <summary>
+            Describes how CSV-formatted results are formatted.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVOutput.QuoteFields">
+            <summary>
+            Indicates whether or not all output fields should be quoted.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVOutput.QuoteEscapeCharacter">
+            <summary>
+            Single character used for escaping the quote character inside an already escaped value.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVOutput.RecordDelimiter">
+            <summary>
+            Value used to separate individual records.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVOutput.FieldDelimiter">
+            <summary>
+            Value used to separate individual fields in a record.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.CSVOutput.QuoteCharacter">
+            <summary>
+            Value used for escaping where the field delimiter is part of the value.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.DeleteBucketAnalyticsConfigurationRequest">
             <summary>
             Container for the parameters to the DeleteBucketAnalyticsConfiguration operation.
@@ -6315,6 +5301,23 @@
             <summary>
             Returns information about the DeleteBucketAnalyticsConfiguration response metadata.
             The DeleteBucketAnalyticsConfiguration operation has a void result type.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.DeleteBucketEncryptionRequest">
+            <summary>
+            Request object for the DeleteBucketEncryption operation.
+            Request Deletes the server-side encryption configuration from the bucket.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.DeleteBucketEncryptionRequest.BucketName">
+            <summary>
+            The name of the bucket containing the server-side encryption configuration to delete.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.DeleteBucketEncryptionResponse">
+            <summary>
+            Returns information about the DeleteBucketEncryption response metadata.
+            The DeleteBucketEncryption operation has a void result type.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.DeleteBucketInventoryConfigurationRequest">
@@ -6847,6 +5850,16 @@
             Check to see if VersionId property is set
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.EncryptionConfiguration">
+            <summary>
+            EncryptionConfiguration class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.EncryptionConfiguration.ReplicaKmsKeyID">
+            <summary>
+            The id of the KMS key used to encrypt the replica object.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.Expiration">
             <summary>
             Defines the expiration policy for a given object.
@@ -6980,6 +5993,27 @@
         <member name="P:Amazon.S3.Model.GetBucketAnalyticsConfigurationResponse.AnalyticsConfiguration">
             <summary>
             The configuration and any analyses for the analytics filter.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.GetBucketEncryptionRequest">
+            <summary>
+            Container for the parameters to the GetBucketEncryptionRequest operation.
+            <para>Returns the server-side encryption configuration of a bucket.</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.GetBucketEncryptionRequest.BucketName">
+            <summary>
+            The name of the bucket.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.GetBucketEncryptionResponse">
+            <summary>
+            GetBucketEncryptionResponse Response
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.GetBucketEncryptionResponse.ServerSideEncryptionConfiguration">
+            <summary>
+            Container for server-side encryption configuration rules. Currently S3 supports one rule only.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.GetBucketInventoryConfigurationRequest">
@@ -7887,7 +6921,7 @@
             </code>
             </remarks>
         </member>
-        <member name="M:Amazon.S3.Model.GetObjectResponse.OnRaiseProgressEvent(System.String,System.Int64,System.Int64,System.Int64)">
+        <member name="M:Amazon.S3.Model.GetObjectResponse.OnRaiseProgressEvent(System.String,System.Int64,System.Int64,System.Int64,System.Boolean)">
             <summary>
             This method is called by a producer of write object progress
             notifications. When called, all the subscribers in the 
@@ -7897,6 +6931,7 @@
             <param name="incrementTransferred">The number of bytes transferred since last event</param>
             <param name="transferred">The number of bytes transferred</param>
             <param name="total">The total number of bytes to be transferred</param>
+            <param name="completed">True if transfer is complete</param>
         </member>
         <member name="M:Amazon.S3.Model.GetObjectResponse.WriteResponseStreamToFileAsync(System.String,System.Boolean,System.Threading.CancellationToken)">
             <summary>
@@ -7912,7 +6947,7 @@
             download progress for the Write Object Event.
             </summary>
         </member>
-        <member name="M:Amazon.S3.Model.WriteObjectProgressArgs.#ctor(System.String,System.String,System.String,System.Int64,System.Int64,System.Int64)">
+        <member name="M:Amazon.S3.Model.WriteObjectProgressArgs.#ctor(System.String,System.String,System.String,System.Int64,System.Int64,System.Int64,System.Boolean)">
             <summary>
             The constructor takes the number of
             currently transferred bytes and the
@@ -7924,8 +6959,9 @@
             <param name="incrementTransferred">The number of bytes transferred since last event</param>
             <param name="transferred">The number of bytes transferred</param>
             <param name="total">The total number of bytes to be transferred</param>
+            <param name="completed">True if finished writing</param>
         </member>
-        <member name="M:Amazon.S3.Model.WriteObjectProgressArgs.#ctor(System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.Int64)">
+        <member name="M:Amazon.S3.Model.WriteObjectProgressArgs.#ctor(System.String,System.String,System.String,System.String,System.Int64,System.Int64,System.Int64,System.Boolean)">
             <summary>
             The constructor takes the number of
             currently transferred bytes and the
@@ -7938,6 +6974,7 @@
             <param name="incrementTransferred">The number of bytes transferred since last event</param>
             <param name="transferred">The number of bytes transferred</param>
             <param name="total">The total number of bytes to be transferred</param>
+            <param name="completed">True if finished writing</param>
         </member>
         <member name="P:Amazon.S3.Model.WriteObjectProgressArgs.BucketName">
             <summary>
@@ -7957,6 +6994,11 @@
         <member name="P:Amazon.S3.Model.WriteObjectProgressArgs.FilePath">
             <summary>
             The file for the S3 object being written.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.WriteObjectProgressArgs.IsCompleted">
+            <summary>
+            True if writing is complete
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.GetObjectTaggingRequest">
@@ -8169,6 +7211,12 @@
              
             </summary>
         </member>
+        <member name="P:Amazon.S3.Model.GetPreSignedUrlRequest.RequestPayer">
+            <summary>
+            Confirms that the requester knows that she or he will be charged for the request.
+            Bucket owners need not specify this parameter in their requests.
+            </summary>
+        </member>
         <member name="P:Amazon.S3.Model.GetPreSignedUrlRequest.ResponseHeaderOverrides">
             <summary>
             A set of response headers that should be returned with the pre-signed url creation response.
@@ -8182,6 +7230,11 @@
         <member name="P:Amazon.S3.Model.GetPreSignedUrlRequest.Metadata">
             <summary>
             The collection of meta data for the request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.GetPreSignedUrlRequest.Parameters">
+            <summary>
+            Custom parameters to include in the signed request, so that they are tamper-proof.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.GetPreSignedUrlResponse">
@@ -8287,12 +7340,22 @@
         </member>
         <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.EnvelopeKey">
             <summary>
-            Symmetric Envelope Key to Encrypt data
+            Envelope Key to Encrypt data
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.EncryptedEnvelopeKey">
+            <summary>
+            Encrypted Envelope Key to Encrypt data
             </summary>
         </member>
         <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.IV">
             <summary>
             Initialization Vector for encryption
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.StorageMode">
+            <summary>
+            Storage mode for encryption information.
             </summary>
         </member>
         <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.CannedACL">
@@ -8417,6 +7480,17 @@
             </summary>
             <returns>true, if RequestPayer property is set.</returns>
         </member>
+        <member name="P:Amazon.S3.Model.InitiateMultipartUploadRequest.TagSet">
+            <summary>
+            The tag-set for the object. The tag-set must be encoded as URL Query parameters.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.Model.InitiateMultipartUploadRequest.IsSetTagSet">
+            <summary>
+            Checks if Tagging property is set
+            </summary>
+            <returns>true if Tagging is set.</returns>
+        </member>
         <member name="T:Amazon.S3.Model.InitiateMultipartUploadResponse">
             <summary>
             Returns information about the  InitiateMultipartUpload response and response metadata.
@@ -8494,6 +7568,16 @@
              
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.InputSerialization">
+            <summary>
+            Describes the serialization format of the object.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InputSerialization.CSV">
+            <summary>
+            Describes the serialization of a CSV-encoded object.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.InventoryConfiguration">
             <summary>
             Class for MetricsConfiguration
@@ -8544,6 +7628,21 @@
             Contains the bucket name, file format, bucket owner (optional), and prefix (optional) where inventory results are published.
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.InventoryEncryption">
+            <summary>
+            InventoryEncryption class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InventoryEncryption.SSES3">
+            <summary>
+            Specifies the use of SSE-S3 to encrypt delievered Inventory reports.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InventoryEncryption.SSEKMS">
+            <summary>
+            Specifies the use of SSE-KMS to encrypt delievered Inventory reports.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.InventoryFilter">
             <summary>
             Class for InventoryFilter
@@ -8583,6 +7682,11 @@
         <member name="P:Amazon.S3.Model.InventoryS3BucketDestination.InventoryFormat">
             <summary>
             Specifies the output format of the inventory results.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.InventoryS3BucketDestination.InventoryEncryption">
+            <summary>
+            Contains the type of server-side encryption used to encrypt the inventory results.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.InventorySchedule">
@@ -9761,6 +8865,21 @@
             Gets the names of the meta data elements.
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.MetadataEntry">
+            <summary>
+            A metadata key-value pair to store with an object.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.MetadataEntry.Name">
+            <summary>
+            Key of metadata key-value pair
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.MetadataEntry.Value">
+            <summary>
+            Value of metadata key-value pair
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.MetricsAndOperator">
             <summary>
             Class for MetricsAndOperatorPredicate
@@ -9896,6 +9015,26 @@
              
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.OutputLocation">
+            <summary>
+            Describes the location where the restore job's output is stored.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.OutputLocation.S3">
+            <summary>
+            Describes an S3 location that will receive the results of the restore request.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.OutputSerialization">
+            <summary>
+            Describes how results of the Select job are serialized.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.OutputSerialization.CSV">
+            <summary>
+            Describes the serialization of CSV-encoded Select results.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.Owner">
             <summary>
             The owner of an S3 bucket.
@@ -9909,6 +9048,36 @@
         <member name="P:Amazon.S3.Model.Owner.Id">
             <summary>
             The unique identifier of the owner.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.ParameterCollection">
+            <summary>
+            This class contains custom querystring parameters for an S3 object, which can then be signed as part of a Pre-signed URL request
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ParameterCollection.Item(System.String)">
+            <summary>
+            Gets and sets parameters for the object. Parameter names must start with "x-". If the name passeed in as the indexer 
+            doesn't start with "x-" then it will be prepended.
+            </summary>
+            <param name="name">The name of the parameter.</param>
+            <returns>The value for the meta data</returns>
+        </member>
+        <member name="M:Amazon.S3.Model.ParameterCollection.Add(System.String,System.String)">
+            <summary>
+            Adds the parameter to the collection, if the name already exists it will be overwritten.
+            </summary>
+            <param name="name">The name of the parameter</param>
+            <param name="value">The value for the parameter</param>
+        </member>
+        <member name="P:Amazon.S3.Model.ParameterCollection.Count">
+            <summary>
+            Gets the count of parameters.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ParameterCollection.Keys">
+            <summary>
+            Gets the names of the parameter elements.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.PartDetail">
@@ -10067,6 +9236,31 @@
             The PutBucketAnalyticsConfigurationResponse operation has a void result type.
             </summary>
         </member>
+        <member name="T:Amazon.S3.Model.PutBucketEncryptionRequest">
+            <summary>
+            Container for the parameters to the PutBucketRequestPayment operation.
+            <para>Creates a new server-side encryption configuration (or replaces an existing one, if present).</para>
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.PutBucketEncryptionRequest.BucketName">
+            <summary>
+            The name of the bucket for which the server-side encryption configuration is set.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.PutBucketEncryptionRequest.ContentMD5">
+            <summary>
+            The base64-encoded 128-bit MD5 digest of the server-side encryption configuration.
+            </summary>
+            <remarks>
+            This header can be used as a message integrity check to verify that the data is the same data that was originally sent. 
+            Although it is optional, we recommend using the Content-MD5 mechanism as an end-to-end integrity check. 
+            </remarks>
+        </member>
+        <member name="P:Amazon.S3.Model.PutBucketEncryptionRequest.ServerSideEncryptionConfiguration">
+            <summary>
+            Container for server-side encryption configuration rules. Currently S3 supports one rule only.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.PutBucketInventoryConfigurationRequest">
             <summary>
             Container for the parameters to the PutBucketRequestPayment operation.
@@ -10202,6 +9396,12 @@
         <member name="P:Amazon.S3.Model.PutBucketPolicyRequest.Policy">
             <summary>
             The bucket policy as a JSON document.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.PutBucketPolicyRequest.ConfirmRemoveSelfBucketAccess">
+            <summary>
+            Set this parameter to true to confirm that you want to remove your 
+            permissions to change this bucket policy in the future.
             </summary>
         </member>
         <member name="P:Amazon.S3.Model.PutBucketPolicyRequest.IncludeSHA256Header">
@@ -10886,6 +10086,21 @@
              
             </summary>
         </member>
+        <member name="P:Amazon.S3.Model.ReplicationDestination.AccountId">
+            <summary>
+            Account ID of the destination bucket. Currently this is only being verified if Access Control Translation is enabled.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ReplicationDestination.AccessControlTranslation">
+            <summary>
+            Container for information regarding the access control for replicas.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ReplicationDestination.EncryptionConfiguration">
+            <summary>
+            Container for information regarding encryption based configuration for replicas.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.ReplicationRule">
             <summary>
             Rule that specifies the replication configuration.
@@ -10934,6 +10149,11 @@
             Checks to see if Destination property is set.
             </summary>
             <returns>true if Destination property is set.</returns>
+        </member>
+        <member name="P:Amazon.S3.Model.ReplicationRule.SourceSelectionCriteria">
+            <summary>
+            Container for filters that define which source objects should be replicated.
+            </summary>
         </member>
         <member name="T:Amazon.S3.Model.RequestPaymentConfiguration">
             <summary>
@@ -11004,7 +10224,7 @@
         <member name="P:Amazon.S3.Model.RestoreObjectRequest.Days">
             <summary>
             Lifetime of the active copy in days
-             
+            ** Do not use with restores that specify OutputLocation **
             </summary>
         </member>
         <member name="P:Amazon.S3.Model.RestoreObjectRequest.VersionId">
@@ -11028,7 +10248,33 @@
         <member name="P:Amazon.S3.Model.RestoreObjectRequest.Tier">
             <summary>
             Glacier retrieval tier at which the restore will be processed.
-            Glacier related prameters pertaining to this job.
+            ** Do not use with restores that specify OutputLocation **
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectRequest.RetrievalTier">
+            <summary>
+            Glacier retrieval tier at which the restore will be processed.
+            ** Only use with restores that require OutputLocation **
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectRequest.RestoreRequestType">
+            <summary>
+            Type of restore request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectRequest.Description">
+            <summary>
+            The optional description for the job.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectRequest.SelectParameters">
+            <summary>
+            Describes the parameters for Select job types.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectRequest.OutputLocation">
+            <summary>
+            Describes the location where the restore job's output is stored.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.RestoreObjectResponse">
@@ -11047,6 +10293,11 @@
             Checks to see if RequestCharged is set.
             </summary>
             <returns>true, if RequestCharged property is set.</returns>
+        </member>
+        <member name="P:Amazon.S3.Model.RestoreObjectResponse.RestoreOutputPath">
+            <summary>
+            Indicates the path in the provided S3 output location where Select results will be restored to.
+            </summary>
         </member>
         <member name="T:Amazon.S3.Model.RoutingRule">
             <summary>Routing Rule
@@ -11317,6 +10568,28 @@
             </summary>
             <returns>true if Status property is set</returns>
         </member>
+        <member name="T:Amazon.S3.Model.S3Encryption">
+            <summary>
+            Describes the server-side encryption that will be applied to the restore results.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Encryption.EncryptionType">
+            <summary>
+            The server-side encryption algorithm used when storing job results in Amazon S3 (e.g., AES256, aws:kms).
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Encryption.KMSKeyId">
+            <summary>
+            Specifies the AWS KMS key ID to use for object encryption. All GET and PUT requests for an object protected by
+            AWS KMS will fail if not made via SSL or using SigV4. Documentation on configuring any of the officially supported AWS SDKs and CLI can be found at
+            http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Encryption.KMSContext">
+            <summary>
+            If the encryption type is aws:kms, this optional value can be used to specify the encryption context for the restore results.
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Model.S3Grant">
             <summary>Grant
             </summary>
@@ -11375,6 +10648,46 @@
             <summary>
             Gets and sets the filterRules property.
             These are the filter rules for this filter.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.S3Location">
+            <summary>
+            Describes an S3 location that will receive the results of the restore request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.BucketName">
+            <summary>
+            The name of the bucket where the restore results will be placed.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.Prefix">
+            <summary>
+            The prefix that is prepended to the restore results for this request.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.CannedACL">
+            <summary>
+            The canned ACL to apply to the restore results.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.AccessControlList">
+            <summary>
+            A list of grants that control access to the staged results.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.Tagging">
+            <summary>
+            The tag-set that is applied to the restore results.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.UserMetadata">
+            <summary>
+            A map of metadata to store with the restore results in S3.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.S3Location.StorageClass">
+            <summary>
+            The class of storage used to store the restore results.
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.S3Object">
@@ -11443,6 +10756,106 @@
         <member name="P:Amazon.S3.Model.S3ObjectVersion.IsDeleteMarker">
             <summary>
             If true, the object is a delete marker for a deleted object.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.SelectParameters">
+            <summary>
+            Describes the parameters for Select job types.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SelectParameters.InputSerialization">
+            <summary>
+            Describes the serialization format of the object.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SelectParameters.ExpressionType">
+            <summary>
+            The type of the provided expression (e.g., SQL).
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SelectParameters.Expression">
+            <summary>
+            The expression that is used to query the object.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SelectParameters.OutputSerialization">
+            <summary>
+            Describes how the results of the Select job are serialized.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.ServerSideEncryptionByDefault">
+            <summary>
+            ServerSideEncryptionByDefault class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ServerSideEncryptionByDefault.ServerSideEncryptionAlgorithm">
+            <summary>
+            Server-side encryption algorithm to use for the default encryption.
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ServerSideEncryptionByDefault.ServerSideEncryptionKeyManagementServiceKeyId">
+            <summary>
+            KMS master key ID to use for the default encryption. 
+            This parameter is allowed if SSEAlgorithm is aws:kms.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.ServerSideEncryptionConfiguration">
+            <summary>
+            ServerSideEncryptionConfiguration class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ServerSideEncryptionConfiguration.ServerSideEncryptionRules">
+            <summary>
+            Container for information about a particular server-side encryption configuration rule.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.ServerSideEncryptionRule">
+            <summary>
+            ServerSideEncryptionRule class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.ServerSideEncryptionRule.ServerSideEncryptionByDefault">
+            <summary>
+            Describes the default server-side encryption to apply to 
+            new objects in the bucket. If Put Object request 
+            does not specify any server-side encryption, 
+            this default encryption will be applied.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.SourceSelectionCriteria">
+            <summary>
+            SourceSelectionCriteria class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SourceSelectionCriteria.SseKmsEncryptedObjects">
+            <summary>
+            Container for filter information of selection of KMS Encrypted S3 objects.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.SSEKMS">
+            <summary>
+            SSEKMS class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SSEKMS.KeyId">
+            <summary>
+            Specifies the ID of the AWS Key Management Service (KMS) 
+            master encryption key to use for encrypting Inventory reports.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.SseKmsEncryptedObjects">
+            <summary>
+            SseKmsEncryptedObjects class
+            </summary>
+        </member>
+        <member name="P:Amazon.S3.Model.SseKmsEncryptedObjects.SseKmsEncryptedObjectsStatus">
+            <summary>
+            The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Model.SSES3">
+            <summary>
+            SSES3 class
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.StorageClassAnalysis">
@@ -11626,74 +11039,6 @@
         <member name="P:Amazon.S3.Model.Tagging.TagSet">
             <summary>
             TagSet
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.TagQuery">
-            <summary>
-            An object to represent a query to search for objects based on tags.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQuery.MaxKeys">
-            <summary>
-            Sets the maximum number of keys returned in the response. The response might contain fewer keys but will never contain more.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQuery.IncludeTags">
-            <summary>
-            Include objects' tagsets into the list result.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQuery.ContinuationToken">
-            <summary>
-            ContinuationToken indicates Amazon S3 that the list is being continued on this bucket with a token.
-            ContinuationToken is obfuscated and is not a real key
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQuery.EncondingType">
-            <summary>
-            Encoding type used by Amazon S3 to encode object keys in the response.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQuery.And">
-            <summary>
-            Filtering criteria for listing objects by tags, if there are multiple filters
-            they all must be satisfied for the objectto be included in the result.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.TagQueryFilter">
-            <summary>
-            TagQueryFilter contains a tag key and a list of possible values.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQueryFilter.Key">
-            <summary>
-            Name of the tag.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TagQueryFilter.Or">
-            <summary>
-            Filtering criteria for listing objects by tags.
-            If there are multiple tag values in the filter, objects matching any value for that tag are returned.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Model.TaggedResource">
-            <summary>
-            TaggedResource contains the object name and optionally its tagset
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TaggedResource.Key">
-            <summary>
-            Key of the s3 object.
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TaggedResource.Tags">
-            <summary>
-            Filtered list of tags
-            </summary>
-        </member>
-        <member name="P:Amazon.S3.Model.TaggedResource.VersionId">
-            <summary>
-            Object's verisonId
             </summary>
         </member>
         <member name="T:Amazon.S3.Model.TopicConfiguration">
@@ -12094,6 +11439,1339 @@
             <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
             <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>
         </member>
+        <member name="T:Amazon.S3.AnalyticsS3ExportFileFormat">
+            <summary>
+            The file format used when exporting data to Amazon S3.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.AnalyticsS3ExportFileFormat.CSV">
+            <summary>
+            CSV file format.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.#ctor(System.String)">
+            <summary>
+            Construct instance of AnalyticsS3ExportFileFormat. 
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.AnalyticsS3ExportFileFormat.op_Implicit(System.String)~Amazon.S3.AnalyticsS3ExportFileFormat">
+            <summary>
+            Converts the string to an AnalyticsS3ExportFileFormat.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.BucketAccelerateStatus">
+            <summary>
+            Represents the accelerate status for a bucket.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.BucketAccelerateStatus.Enabled">
+            <summary>
+            Bucket acceleration is enabled.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.BucketAccelerateStatus.Suspended">
+            <summary>
+            Bucket acceleration is suspended.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.BucketAccelerateStatus.#ctor(System.String)">
+            <summary>
+            Construct instance of BucketAccelerateStatus. It is not intended for this constructor to be called. Instead users should call the FindValue.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.BucketAccelerateStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.BucketAccelerateStatus.op_Implicit(System.String)~Amazon.S3.BucketAccelerateStatus">
+            <summary>
+            Converts the string to an BucketAccelerateStatus
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.S3CannedACL">
+            <summary>
+            A list of all possible CannedACLs that can be used
+            for S3 Buckets or S3 Objects. For more information about CannedACLs, refer to
+            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/RESTAccessPolicy.html#RESTCannedAccessPolicies"/>.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.NoACL">
+            <summary>
+            Owner gets FULL_CONTROL.
+            No one else has access rights (default).
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.Private">
+            <summary>
+            Owner gets FULL_CONTROL.
+            No one else has access rights (default).
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.PublicRead">
+            <summary>
+            Owner gets FULL_CONTROL and the anonymous principal is granted READ access.
+            If this policy is used on an object, it can be read from a browser with no authentication.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.PublicReadWrite">
+            <summary>
+            Owner gets FULL_CONTROL, the anonymous principal is granted READ and WRITE access.
+            This can be a useful policy to apply to a bucket, but is generally not recommended.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.AuthenticatedRead">
+            <summary>
+            Owner gets FULL_CONTROL, and any principal authenticated as a registered Amazon
+            S3 user is granted READ access.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.AWSExecRead">
+            <summary>
+            Owner gets FULL_CONTROL. Amazon EC2 gets READ access to GET an
+            Amazon Machine Image (AMI) bundle from Amazon S3.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.BucketOwnerRead">
+            <summary>
+            Object Owner gets FULL_CONTROL, Bucket Owner gets READ
+            This ACL applies only to objects and is equivalent to private when used with PUT Bucket. 
+            You use this ACL to let someone other than the bucket owner write content (get full control) 
+            in the bucket but still grant the bucket owner read access to the objects.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.BucketOwnerFullControl">
+            <summary>
+            Object Owner gets FULL_CONTROL, Bucket Owner gets FULL_CONTROL.
+            This ACL applies only to objects and is equivalent to private when used with PUT Bucket. 
+            You use this ACL to let someone other than the bucket owner write content (get full control) 
+            in the bucket but still grant the bucket owner full rights over the objects.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3CannedACL.LogDeliveryWrite">
+            <summary>
+            The LogDelivery group gets WRITE and READ_ACP permissions on the bucket.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.S3CannedACL.#ctor(System.String)">
+            <summary>
+            Construct instance of S3CannedACL. It is not intended for this constructor to be called. Instead users should call the FindValue.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.S3CannedACL.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.S3CannedACL.op_Implicit(System.String)~Amazon.S3.S3CannedACL">
+            <summary>
+            Converts the string to an S3CannedACL
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.S3Region">
+            <summary>
+            A list of all possible S3 Bucket region possibilities. For
+            more information, refer to 
+            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/BucketConfiguration.html#LocationSelection"/>.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.US">
+            <summary>
+            Specifies that the S3 Bucket should use US locality.
+            This is the default value.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.USE2">
+            <summary>
+            Specifies that the S3 Bucket should use US-EAST-2 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.EU">
+            <summary>
+            Specifies that the S3 Bucket should use EU locality which defaults to EU-WEST-1
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.EUW1">
+            <summary>
+            Specifies that the S3 Bucket should use the EU-WEST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.EUW2">
+            <summary>
+            Specifies that the S3 Bucket should use the EU-WEST-2 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.EUW3">
+            <summary>
+            Specifies that the S3 Bucket should use the EU-WEST-3 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.EUC1">
+            <summary>
+            Specifies that the S3 Bucket should use the EU-CENTRAL-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.USW1">
+            <summary>
+            Specifies that the S3 Bucket should use US-WEST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.USW2">
+            <summary>
+            Specifies that the S3 Bucket should use US-WEST-2 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.GOVW1">
+            <summary>
+            Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.APS1">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-SOUTHEAST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.APS2">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-SOUTHEAST-2 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.APN1">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-NORTHEAST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.APN2">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-NORTHEAST-2 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.APS3">
+            <summary>
+            Specifies that the S3 Bucket should use the AP-SOUTH-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.SAE1">
+            <summary>
+            Specifies that the S3 Bucket should use the SA-EAST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.CN1">
+            <summary>
+            Specifies that the S3 Bucket should use CN-NORTH-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.CNW1">
+            <summary>
+            Specifies that the S3 Bucket should use CN-NORTHWEST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.CAN1">
+            <summary>
+            Specifies that the S3 Bucket should use CA-CENTRAL-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.SFO">
+            <summary>
+            Specifies that the S3 Bucket should use US-WEST-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.CN">
+            <summary>
+            Specifies that the S3 Bucket should use CN-NORTH-1 locality.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Region.GOV">
+            <summary>
+            Specifies that the S3 Bucket should use US-GOV-WEST-1 locality.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.S3Region.#ctor(System.String)">
+            <summary>
+            Construct instance of S3Region. It is not intended for this constructor to be called. Instead users should call the FindValue.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.S3Region.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.S3Region.op_Implicit(System.String)~Amazon.S3.S3Region">
+            <summary>
+            Converts the string to the S3Region class
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.S3Permission">
+            <summary>
+            A list of all ACL permissions. For more information, refer to
+            <see href="http://docs.amazonwebservices.com/AmazonS3/latest/S3_ACLs.html#S3_ACLs_Permissions"/>.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.READ">
+            <summary>
+            When applied to a bucket, grants permission to list the bucket.
+            When applied to an object, this grants permission to read the
+            object data and/or metadata.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.WRITE">
+            <summary>
+            When applied to a bucket, grants permission to create, overwrite,
+            and delete any object in the bucket. This permission is not
+            supported for objects.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.READ_ACP">
+            <summary>
+            Grants permission to read the ACL for the applicable bucket or object.
+            The owner of a bucket or object always has this permission implicitly.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.WRITE_ACP">
+            <summary>
+            Gives permission to overwrite the ACP for the applicable bucket or object.
+            The owner of a bucket or object always has this permission implicitly.
+            Granting this permission is equivalent to granting FULL_CONTROL because
+            the grant recipient can make any changes to the ACP.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.FULL_CONTROL">
+            <summary>
+            Provides READ, WRITE, READ_ACP, and WRITE_ACP permissions.
+            It does not convey additional rights and is provided only for convenience.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3Permission.RESTORE_OBJECT">
+            <summary>
+            Gives permission to restore an object that is currently stored in Amazon Glacier
+            for archival storage.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.S3Permission.#ctor(System.String)">
+            <summary>
+            Construct S3Permission.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.S3Permission.#ctor(System.String,System.String)">
+            <summary>
+            Construct instance of S3Permission. It is not intended for this constructor to be called. Instead users should call the FindValue.
+            </summary>
+            <param name="value"></param>
+            <param name="headerName"></param>
+        </member>
+        <member name="P:Amazon.S3.S3Permission.HeaderName">
+            <summary>
+            Gets and sets the HeaderName property.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.S3Permission.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.S3Permission.op_Implicit(System.String)~Amazon.S3.S3Permission">
+            <summary>
+            Converts the string to an S3Permission
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.S3MetadataDirective">
+            <summary>
+            An enumeration of all Metadata directives that
+            can be used for the CopyObject operation.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3MetadataDirective.COPY">
+            <summary>
+            Specifies that the metadata is copied from the source object.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3MetadataDirective.REPLACE">
+            <summary>
+            Specifies that the metadata is replaced with metadata provided in the request.
+            All original metadata is replaced by the metadata you specify.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Protocol">
+            <summary>
+            An enumeration of all protocols that the pre-signed
+            URL can be created against.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.Protocol.HTTPS">
+            <summary>
+            https protocol will be used in the pre-signed URL.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.Protocol.HTTP">
+            <summary>
+            http protocol will be used in the pre-signed URL.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.HttpVerb">
+            <summary>
+            An enumeration of supported HTTP verbs
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.HttpVerb.GET">
+            <summary>
+            The GET HTTP verb.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.HttpVerb.HEAD">
+            <summary>
+            The HEAD HTTP verb.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.HttpVerb.PUT">
+            <summary>
+            The PUT HTTP verb.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.HttpVerb.DELETE">
+            <summary>
+            The DELETE HTTP verb.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.S3StorageClass">
+            <summary>
+            Specifies the Storage Class of of an S3 object. Possible values
+            are: <list type="bullet">
+            <item>ReducedRedundancy: provides a 99.99% durability guarantee</item>
+            <item>Standard: provides a 99.999999999% durability guarantee</item>
+            </list>
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3StorageClass.Standard">
+            <summary>
+            The STANDARD storage class, which is the default
+            storage class for S3 objects. Provides a 99.999999999%
+            durability guarantee.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3StorageClass.ReducedRedundancy">
+            <summary>
+            The REDUCED_REDUNDANCY storage class for S3 objects. This
+            provides a reduced (99.99%) durability guarantee at a lower
+            cost as compared to the STANDARD storage class. Use this
+            storage class for non-mission critical data or for data 
+            that doesn’t require the higher level of durability that S3
+            provides with the STANDARD storage class.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3StorageClass.Glacier">
+            <summary>
+            The GLACIER storage is for object that are stored in Amazon Glacier.
+            This storage class is for objects that are for archival purpose and 
+            get operations are rare.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.S3StorageClass.StandardInfrequentAccess">
+            <summary>
+            The STANDARD_IA storage is for infrequently accessed objects.
+            This storage class is for objects that are long-lived and less frequently accessed,
+            like backups and older data.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.S3StorageClass.#ctor(System.String)">
+            <summary>
+            Construct an instance of S3StorageClass.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.S3StorageClass.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.S3StorageClass.op_Implicit(System.String)~Amazon.S3.S3StorageClass">
+            <summary>
+            Convert string to S3StorageClass.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.NotificationEvents">
+            <summary>
+            The constants for the known event names used by S3 notification. S3 might add new
+            events before the SDK is updated. In which case the names listed in the S3 documentation
+            will work as well as these constants.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.NotificationEvents.ReducedRedundancyLostObject">
+            <summary>
+            An event that says an object has been lost in the reduced redundancy storage.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.ServerSideEncryptionCustomerMethod">
+            <summary>
+            A list of all server-side encryption methods for customer provided encryption keys.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ServerSideEncryptionCustomerMethod.None">
+            <summary>
+            No server side encryption to be used.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ServerSideEncryptionCustomerMethod.AES256">
+            <summary>
+            Use AES 256 server side encryption.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.#ctor(System.String)">
+            <summary>
+            Constructs an instance of ServerSideEncryptionCustomerMethod.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionCustomerMethod.op_Implicit(System.String)~Amazon.S3.ServerSideEncryptionCustomerMethod">
+            <summary>
+            Converts string to ServerSideEncryptionCustomerMethod.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.ServerSideEncryptionMethod">
+            <summary>
+            A list of all server-side encryption methods.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ServerSideEncryptionMethod.None">
+            <summary>
+            No server side encryption to be used.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ServerSideEncryptionMethod.AES256">
+            <summary>
+            Use AES 256 server side encryption.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ServerSideEncryptionMethod.AWSKMS">
+            <summary>
+            Use AWS Key Management Service for server side encryption.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionMethod.#ctor(System.String)">
+            <summary>
+            Construct instance of ServerSideEncryptionMethod.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionMethod.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.ServerSideEncryptionMethod.op_Implicit(System.String)~Amazon.S3.ServerSideEncryptionMethod">
+            <summary>
+            Convert string to ServerSideEncryptionCustomerMethod.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.GranteeType">
+            <summary>
+            A list of all grantee types.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GranteeType.Group">
+            <summary>
+            The predefined group.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GranteeType.Email">
+            <summary>
+            The email address of an AWS account
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GranteeType.CanonicalUser">
+            <summary>
+            The canonical user ID of an AWS account
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.GranteeType.#ctor(System.String)">
+            <summary>
+            Construct an instance of GranteeType.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.GranteeType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.GranteeType.op_Implicit(System.String)~Amazon.S3.GranteeType">
+            <summary>
+            Convert a string to GranteeType.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.LifecycleRuleStatus">
+            <summary>
+            A list of all lifecycle statuses.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.LifecycleRuleStatus.Enabled">
+            <summary>
+            The rule is enabled.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.LifecycleRuleStatus.Disabled">
+            <summary>
+            The rule is disabled.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.LifecycleRuleStatus.#ctor(System.String)">
+            <summary>
+            Constructs an instance LifecycleRuleStatus.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.LifecycleRuleStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.LifecycleRuleStatus.op_Implicit(System.String)~Amazon.S3.LifecycleRuleStatus">
+            <summary>
+            Convert string to LifecycleRuleStatus.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.VersionStatus">
+            <summary>
+            A list of all version statuses.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.VersionStatus.Off">
+            <summary>
+            The rule is off.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.VersionStatus.Suspended">
+            <summary>
+            The rule is suspended.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.VersionStatus.Enabled">
+            <summary>
+            The rule is enabled.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.VersionStatus.#ctor(System.String)">
+            <summary>
+            Construct an instance of VersionStatus.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.VersionStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.VersionStatus.op_Implicit(System.String)~Amazon.S3.VersionStatus">
+            <summary>
+            Convert string to VersionStatus.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.EncodingType">
+            <summary>
+            A list of all encoding types.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EncodingType.Url">
+            <summary>
+            Url encoding.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.EncodingType.#ctor(System.String)">
+            <summary>
+            Constructs intance of EncodingType
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.EncodingType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.EncodingType.op_Implicit(System.String)~Amazon.S3.EncodingType">
+            <summary>
+            Converts string to EncodingType
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.EventType">
+            <summary>
+            A list of all event types that can configured with the bucket notification configuration.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectCreatedAll">
+            <summary>
+            The event encapsulates all the object create events
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectCreatedPut">
+            <summary>
+            Event for put operations
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectCreatedPost">
+            <summary>
+            Event for post operations
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectCreatedCopy">
+            <summary>
+            Event for copy operations
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectCreatedCompleteMultipartUpload">
+            <summary>
+            Event for completing a multi part upload
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectRemovedAll">
+            <summary>
+            This event encapsulates all the object removed events
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectRemovedDelete">
+            <summary>
+            Event for object removed, delete operation.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ObjectRemovedDeleteMarkerCreated">
+            <summary>
+            Event for object removed, delete marker created operation.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.EventType.ReducedRedundancyLostObject">
+            <summary>
+            Event for objects stored in reduced redundancy and S3 detects the object is lost
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.EventType.#ctor(System.String)">
+            <summary>
+            Constructs instance of EventType.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.EventType.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.EventType.op_Implicit(System.String)~Amazon.S3.EventType">
+            <summary>
+            Convert string to EventType.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.EventType.Equals(Amazon.Runtime.ConstantClass)">
+            <summary>
+            Compares if the ConstantClass instances are equals.
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.EventType.Equals(System.String)">
+            <summary>
+            Compares if the ConstantClass instances are equals. This is ovewritten to handle the 
+            discrepancy with S3 events coming from Lambda that don't have the prefix "s3:".
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.InventoryFormat">
+            <summary>
+            A list of all Inventory Formats.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryFormat.CSV">
+            <summary>
+             CSV inventory format
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryFormat.ORC">
+            <summary>
+             CSV inventory format
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.InventoryFormat.#ctor(System.String)">
+            <summary>
+            Construct instance of InventoryFormat.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.InventoryFormat.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the InventoryFormat.</param>
+            <returns>The InventoryFormat object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.InventoryFormat.op_Implicit(System.String)~Amazon.S3.InventoryFormat">
+            <summary>
+            Convert string to InventoryFormat.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.InventoryIncludedObjectVersions">
+            <summary>
+            A list of inventory included object versions.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryIncludedObjectVersions.All">
+            <summary>
+             All Inventory Included Object Versions
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryIncludedObjectVersions.Current">
+            <summary>
+             Current Inventory Included Object Versions
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.#ctor(System.String)">
+            <summary>
+            Construct instance of InventoryIncludedObjectVersions.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the InventoryIncludedObjectVersions.</param>
+            <returns>The InventoryIncludedObjectVersions object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.InventoryIncludedObjectVersions.op_Implicit(System.String)~Amazon.S3.InventoryIncludedObjectVersions">
+            <summary>
+            Convert string to InventoryIncludedObjectVersions.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.InventoryFrequency">
+            <summary>
+            A list of inventory frequencies.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryFrequency.Daily">
+            <summary>
+             Daily Inventory Frequency
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryFrequency.Weekly">
+            <summary>
+             Weekly Inventory Frequency
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.InventoryFrequency.#ctor(System.String)">
+            <summary>
+            Construct instance of InventoryFrequency.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.InventoryFrequency.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the InventoryFrequency.</param>
+            <returns>The InventoryFrequency object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.InventoryFrequency.op_Implicit(System.String)~Amazon.S3.InventoryFrequency">
+            <summary>
+            Convert string to InventoryFrequency.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.InventoryOptionalField">
+            <summary>
+            A list of inventory optional fields.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.Size">
+            <summary>
+             InventoryOptionalField for Size
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.LastModifiedDate">
+            <summary>
+             InventoryOptionalField for LastModifiedDate
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.StorageClass">
+            <summary>
+             InventoryOptionalField for StorageClass
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.ETag">
+            <summary>
+             InventoryOptionalField for ETag
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.IsMultipartUploaded">
+            <summary>
+             InventoryOptionalField for IsMultipartUploaded
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.ReplicationStatus">
+            <summary>
+             InventoryOptionalField for ReplicationStatus
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.InventoryOptionalField.EncryptionStatus">
+            <summary>
+             InventoryOptionalField for EncryptionStatus
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.InventoryOptionalField.#ctor(System.String)">
+            <summary>
+            Construct instance of InventoryOptionalField.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.InventoryOptionalField.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the InventoryOptionalField.</param>
+            <returns>The InventoryIncludedObjectVersions object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.InventoryOptionalField.op_Implicit(System.String)~Amazon.S3.InventoryOptionalField">
+            <summary>
+            Convert string to InventoryOptionalField.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.ReplicationStatus">
+            <summary>
+            The status of the replication job associated with this source object.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationStatus.Pending">
+            <summary>
+             The object is pending replication.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationStatus.Completed">
+            <summary>
+            The object has been replicated.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationStatus.Replica">
+            <summary>
+            The object was created as a result of replication.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationStatus.Failed">
+            <summary>
+             The object replication has failed due to a customer-attributable reason, and the replication will not be attempted again.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.ReplicationStatus.#ctor(System.String)">
+            <summary>
+            Construct instance of ReplicationStatus.
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.ReplicationStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the ReplicationStatus.</param>
+            <returns>The ReplicationStatus object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.ReplicationStatus.op_Implicit(System.String)~Amazon.S3.ReplicationStatus">
+            <summary>
+            Convert string to ReplicationStatus.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.ReplicationRuleStatus">
+            <summary>
+            Whether a replication rule is applied or ignored.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationRuleStatus.Enabled">
+            <summary>
+            The rule will be applied.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ReplicationRuleStatus.Disabled">
+            <summary>
+            The rule will be ignored.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.ReplicationRuleStatus.#ctor(System.String)">
+            <summary>
+            Construct instance of ReplicationRuleStatus
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.ReplicationRuleStatus.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the ReplicationRuleStatus.</param>
+            <returns>The ReplicationRuleStatus object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.ReplicationRuleStatus.op_Implicit(System.String)~Amazon.S3.ReplicationRuleStatus">
+            <summary>
+            Convert string to ReplicationRuleStatus.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.TaggingDirective">
+            <summary>
+            Specifies whether the object tag-set are copied from the source object or replaced with tag-set provided in the request.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.TaggingDirective.COPY">
+            <summary>
+            The object tag-set is copied from the source object.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.TaggingDirective.REPLACE">
+            <summary>
+            The object tag-set is replaced with tag-set provided in the request.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.TaggingDirective.#ctor(System.String)">
+            <summary>
+            Construct instance of TaggingDirective
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.TaggingDirective.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the TaggingDirective.</param>
+            <returns>The TaggingDirective object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.TaggingDirective.op_Implicit(System.String)~Amazon.S3.TaggingDirective">
+            <summary>
+            Convert string to TaggingDirective.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.GlacierJobTier">
+            <summary>
+            All enumerations type for retrieval tier for Glacier restore.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GlacierJobTier.Standard">
+            <summary>
+            Standard Tier for Glacier restore.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GlacierJobTier.Bulk">
+            <summary>
+            Bulk Tier for Glacier restore.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.GlacierJobTier.Expedited">
+            <summary>
+            Expedited Tier for Glacier restore.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.GlacierJobTier.#ctor(System.String)">
+            <summary>
+            Construct instance of RestoreObjectRequestGlacierJobTier
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.GlacierJobTier.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the RestoreObjectRequestGlacierJobTier.</param>
+            <returns>The RestoreObjectRequestGlacierJobTier object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.GlacierJobTier.op_Implicit(System.String)~Amazon.S3.GlacierJobTier">
+            <summary>
+            Convert string to RestoreObjectRequestGlacierJobTier.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.StorageClassAnalysisSchemaVersion">
+            <summary>
+            The version of the output schema to use when exporting data.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.StorageClassAnalysisSchemaVersion.V_1">
+            <summary>
+            The schema output version V_1.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.#ctor(System.String)">
+            <summary>
+            Construct instance of StorageClassAnalysisSchemaVersion
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.FindValue(System.String)">
+            <summary>
+            Finds the constant for the unique value.
+            </summary>
+            <param name="value">The string representation of the StorageClassAnalysisSchemaVersion.</param>
+            <returns>The StorageClassAnalysisSchemaVersion object for that string.</returns>
+        </member>
+        <member name="M:Amazon.S3.StorageClassAnalysisSchemaVersion.op_Implicit(System.String)~Amazon.S3.StorageClassAnalysisSchemaVersion">
+            <summary>
+            Convert string to StorageClassAnalysisSchemaVersion.
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.RequestPayer">
+            <summary>
+            Acknowledges that requester pays for the operation.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.RequestPayer.Requester">
+            <summary>
+            Requester pays for the operation.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RequestPayer.FindValue(System.String)">
+            <summary>
+            Finds the RequestPayer instance for the string value.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RequestPayer.op_Implicit(System.String)~Amazon.S3.RequestPayer">
+            <summary>
+            Converts string to RequestPayer instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.RequestCharged">
+            <summary>
+            The response from S3 that it confirms that requester pays.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.RequestCharged.Requester">
+            <summary>
+            S3 acknowledges that the requester pays.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RequestCharged.FindValue(System.String)">
+            <summary>
+            Finds the RequestCharged instance for the string value
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RequestCharged.op_Implicit(System.String)~Amazon.S3.RequestCharged">
+            <summary>
+             converts the string to RequestCharged instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.OwnerOverride">
+            <summary>
+            The override value for the owner of the replica object.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.OwnerOverride.Destination">
+            <summary>
+            Overrides destination bucket's owner.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.OwnerOverride.FindValue(System.String)">
+            <summary>
+            Finds the OwnerOverride instance for the string value
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.OwnerOverride.op_Implicit(System.String)~Amazon.S3.OwnerOverride">
+            <summary>
+             converts the string to OwnerOverride instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.SseKmsEncryptedObjectsStatus">
+            <summary>
+            The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.SseKmsEncryptedObjectsStatus.Enabled">
+            <summary>
+            The replication for KMS encrypted S3 objects is enabled.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.SseKmsEncryptedObjectsStatus.Disabled">
+            <summary>
+            The replication for KMS encrypted S3 objects is disabled.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.SseKmsEncryptedObjectsStatus.#ctor(System.String)">
+            <summary>
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:Amazon.S3.SseKmsEncryptedObjectsStatus.FindValue(System.String)">
+            <summary>
+            Finds the SseKmsEncryptedObjectsStatus instance for the string value
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.SseKmsEncryptedObjectsStatus.op_Implicit(System.String)~Amazon.S3.SseKmsEncryptedObjectsStatus">
+            <summary>
+            Converts the string to SseKmsEncryptedObjectsStatus instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.FileHeaderInfo">
+            <summary>
+            Specify how headers will be handled.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.FileHeaderInfo.Use">
+            <summary>
+            Headers will be usable in SELECT clause. 
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.FileHeaderInfo.Ignore">
+            <summary>
+            Headers will be skipped
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.FileHeaderInfo.None">
+            <summary>
+            No header is present.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.FileHeaderInfo.FindValue(System.String)">
+            <summary>
+            Finds the FileHeaderInfo instance for the string value
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.FileHeaderInfo.op_Implicit(System.String)~Amazon.S3.FileHeaderInfo">
+            <summary>
+            Converts the string to FileHeaderInfo instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.QuoteFields">
+            <summary>
+            Describes when fields in output should be surrounded with quotes.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.QuoteFields.Always">
+            <summary>
+            Specifies that fields in output should always be surrounded in quotes.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.QuoteFields.AsNeeded">
+            <summary>
+            Specifies that fields in output should be surrounded in quotes as necessary.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.QuoteFields.FindValue(System.String)">
+            <summary>
+            Finds the QuoteFields instance for the string value
+            </summary>
+            <param name="value">string value that maps to QuoteFields enum</param>
+            <returns>QuoteFields enum</returns>
+        </member>
+        <member name="M:Amazon.S3.QuoteFields.op_Implicit(System.String)~Amazon.S3.QuoteFields">
+            <summary>
+            Converts the string to QuoteFields instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.ExpressionType">
+            <summary>
+            Type of the expression provided in the Expression member.
+            </summary>
+        </member>
+        <member name="F:Amazon.S3.ExpressionType.SQL">
+            <summary>
+            SQL expression
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.ExpressionType.FindValue(System.String)">
+            <summary>
+            Finds the ExpressionType instance for the string value
+            </summary>
+            <param name="value">string value that maps to ExpressionType enum</param>
+            <returns>ExpressionType enum</returns>
+        </member>
+        <member name="M:Amazon.S3.ExpressionType.op_Implicit(System.String)~Amazon.S3.ExpressionType">
+            <summary>
+            Converts the string to ExpressionType instance
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.RestoreRequestType">
+            <summary>
+            Indicates what type of job is being initiated.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RestoreRequestType.FindValue(System.String)">
+            <summary>
+            Finds the RestoreRequestType instance for the string value
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.RestoreRequestType.op_Implicit(System.String)~Amazon.S3.RestoreRequestType">
+            <summary>
+            Converts the string to RestoreRequestType instance
+            </summary>
+        </member>
         <member name="T:Amazon.S3.Util.AmazonS3Uri">
             <summary>
             Uri wrapper that can parse out information (bucket, key, region, style) from an
@@ -12306,102 +12984,6 @@
             <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
             <returns></returns>
         </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.DoesS3BucketExist(Amazon.S3.IAmazonS3,System.String)">
-            <summary>
-            Determines whether an S3 bucket exists or not.
-            This is done by:
-            1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
-            well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
-            (which is one week).
-            2. Making a HEAD request to the Url
-            </summary>
-            <param name="bucketName">The name of the bucket to check.</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-            <returns></returns>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetObjectStorageClass(Amazon.S3.IAmazonS3,System.String,System.String,Amazon.S3.S3StorageClass)">
-            <summary>
-            Sets the storage class for the S3 Object to the value
-            specified.
-            </summary>
-            <param name="bucketName">The name of the bucket in which the key is stored</param>
-            <param name="key">The key of the S3 Object whose storage class needs changing</param>
-            <param name="sClass">The new Storage Class for the object</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-            <seealso cref="T:Amazon.S3.S3StorageClass"/>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetObjectStorageClass(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.S3StorageClass)">
-            <summary>
-            Sets the storage class for the S3 Object's Version to the value
-            specified.
-            </summary>
-            <param name="bucketName">The name of the bucket in which the key is stored</param>
-            <param name="key">The key of the S3 Object whose storage class needs changing</param>
-            <param name="version">The version of the S3 Object whose storage class needs changing</param>
-            <param name="sClass">The new Storage Class for the object</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-            <seealso cref="T:Amazon.S3.S3StorageClass"/>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetServerSideEncryption(Amazon.S3.IAmazonS3,System.String,System.String,Amazon.S3.ServerSideEncryptionMethod)">
-            <summary>
-            Sets the server side encryption method for the S3 Object to the value
-            specified.
-            </summary>
-            <param name="bucketName">The name of the bucket in which the key is stored</param>
-            <param name="key">The key of the S3 Object</param>
-            <param name="method">The server side encryption method</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetServerSideEncryption(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.ServerSideEncryptionMethod)">
-            <summary>
-            Sets the server side encryption method for the S3 Object's Version to the value
-            specified.
-            </summary>
-            <param name="bucketName">The name of the bucket in which the key is stored</param>
-            <param name="key">The key of the S3 Object</param>
-            <param name="version">The version of the S3 Object</param>
-            <param name="method">The server side encryption method</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetWebsiteRedirectLocation(Amazon.S3.IAmazonS3,System.String,System.String,System.String)">
-            <summary>
-            Sets the redirect location for the S3 Object's when being accessed through the S3 website endpoint.
-            </summary>
-            <param name="bucketName">The name of the bucket in which the key is stored</param>
-            <param name="key">The key of the S3 Object</param>
-            <param name="websiteRedirectLocation">The redirect location</param>
-            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.SetupForObjectModification(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.Model.CopyObjectRequest@,Amazon.S3.Model.PutACLRequest@)">
-            <summary>
-            Sets up the request needed to make an exact copy of the object leaving the parent method
-            the ability to change just the attribute being requested to change.
-            </summary>
-            <param name="bucketName"></param>
-            <param name="key"></param>
-            <param name="version"></param>
-            <param name="s3Client"></param>
-            <param name="copyRequest"></param>
-            <param name="putACLRequest"></param>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.ConvertToS3StorageClass(System.String)">
-            <summary>
-            Converts the string representing a storage class that would come back from a ListObjects request
-            to the S3StorageClass enumeration.
-            </summary>
-            <param name="value">Amazon S3 string values for storage class</param>
-            <returns>The converted S3StorageClass enumeration</returns>
-        </member>
-        <member name="M:Amazon.S3.Util.AmazonS3Util.PostUpload(Amazon.S3.Util.S3PostUploadRequest)">
-            <summary>
-            Upload data to Amazon S3 using HTTP POST.
-            </summary>
-            <remarks>
-            For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
-            </remarks>
-            <param name="request">Request object which describes the data to POST</param>
-            <exception cref="T:Amazon.S3.Util.S3PostUploadException">Thrown if the service returns an error</exception>
-        </member>
         <member name="M:Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjectsAsync(Amazon.S3.IAmazonS3,System.String)">
             <summary>
             Deletes an S3 bucket which contains objects.
@@ -12498,6 +13080,102 @@
             <param name="updateCallback">The callback to be invoked.</param>
             <param name="update">The data being passed to the callback.</param>
             8
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.DoesS3BucketExist(Amazon.S3.IAmazonS3,System.String)">
+            <summary>
+            Determines whether an S3 bucket exists or not.
+            This is done by:
+            1. Creating a PreSigned Url for the bucket. To work with Signature V4 only regions, as
+            well as Signature V4-optional regions, we keep the expiry to within the maximum for V4 
+            (which is one week).
+            2. Making a HEAD request to the Url
+            </summary>
+            <param name="bucketName">The name of the bucket to check.</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetObjectStorageClass(Amazon.S3.IAmazonS3,System.String,System.String,Amazon.S3.S3StorageClass)">
+            <summary>
+            Sets the storage class for the S3 Object to the value
+            specified.
+            </summary>
+            <param name="bucketName">The name of the bucket in which the key is stored</param>
+            <param name="key">The key of the S3 Object whose storage class needs changing</param>
+            <param name="sClass">The new Storage Class for the object</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+            <seealso cref="T:Amazon.S3.S3StorageClass"/>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetObjectStorageClass(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.S3StorageClass)">
+            <summary>
+            Sets the storage class for the S3 Object's Version to the value
+            specified.
+            </summary>
+            <param name="bucketName">The name of the bucket in which the key is stored</param>
+            <param name="key">The key of the S3 Object whose storage class needs changing</param>
+            <param name="version">The version of the S3 Object whose storage class needs changing</param>
+            <param name="sClass">The new Storage Class for the object</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+            <seealso cref="T:Amazon.S3.S3StorageClass"/>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetServerSideEncryption(Amazon.S3.IAmazonS3,System.String,System.String,Amazon.S3.ServerSideEncryptionMethod)">
+            <summary>
+            Sets the server side encryption method for the S3 Object to the value
+            specified.
+            </summary>
+            <param name="bucketName">The name of the bucket in which the key is stored</param>
+            <param name="key">The key of the S3 Object</param>
+            <param name="method">The server side encryption method</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetServerSideEncryption(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.ServerSideEncryptionMethod)">
+            <summary>
+            Sets the server side encryption method for the S3 Object's Version to the value
+            specified.
+            </summary>
+            <param name="bucketName">The name of the bucket in which the key is stored</param>
+            <param name="key">The key of the S3 Object</param>
+            <param name="version">The version of the S3 Object</param>
+            <param name="method">The server side encryption method</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetWebsiteRedirectLocation(Amazon.S3.IAmazonS3,System.String,System.String,System.String)">
+            <summary>
+            Sets the redirect location for the S3 Object's when being accessed through the S3 website endpoint.
+            </summary>
+            <param name="bucketName">The name of the bucket in which the key is stored</param>
+            <param name="key">The key of the S3 Object</param>
+            <param name="websiteRedirectLocation">The redirect location</param>
+            <param name="s3Client">The Amazon S3 Client to use for S3 specific operations.</param>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.SetupForObjectModification(Amazon.S3.IAmazonS3,System.String,System.String,System.String,Amazon.S3.Model.CopyObjectRequest@,Amazon.S3.Model.PutACLRequest@)">
+            <summary>
+            Sets up the request needed to make an exact copy of the object leaving the parent method
+            the ability to change just the attribute being requested to change.
+            </summary>
+            <param name="bucketName"></param>
+            <param name="key"></param>
+            <param name="version"></param>
+            <param name="s3Client"></param>
+            <param name="copyRequest"></param>
+            <param name="putACLRequest"></param>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.ConvertToS3StorageClass(System.String)">
+            <summary>
+            Converts the string representing a storage class that would come back from a ListObjects request
+            to the S3StorageClass enumeration.
+            </summary>
+            <param name="value">Amazon S3 string values for storage class</param>
+            <returns>The converted S3StorageClass enumeration</returns>
+        </member>
+        <member name="M:Amazon.S3.Util.AmazonS3Util.PostUpload(Amazon.S3.Util.S3PostUploadRequest)">
+            <summary>
+            Upload data to Amazon S3 using HTTP POST.
+            </summary>
+            <remarks>
+            For more information, <see href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingHTTPPOST.html"/>
+            </remarks>
+            <param name="request">Request object which describes the data to POST</param>
+            <exception cref="T:Amazon.S3.Util.S3PostUploadException">Thrown if the service returns an error</exception>
         </member>
         <member name="M:Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjects(Amazon.S3.IAmazonS3,System.String)">
             <summary>
@@ -12796,6 +13474,9 @@
             </summary>
         </member>
         <member name="T:Amazon.S3.Util.S3DeleteBucketWithObjectsRequest">
+            <summary>
+            Internal class used to pass the parameters for DeleteS3BucketWithObjects operation.
+            </summary>
             <summary>
             Internal class used to pass the parameters for DeleteS3BucketWithObjects operation.
             </summary>
@@ -13597,6 +14278,25 @@
             </param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
+        <member name="M:Amazon.S3.IAmazonS3.DeleteBucketEncryption(Amazon.S3.Model.DeleteBucketEncryptionRequest)">
+            <summary>
+            Deletes the server-side encryption configuration from the bucket.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption service method.</param>
+            
+            <returns>The response from the DeleteBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.IAmazonS3.DeleteBucketEncryptionAsync(Amazon.S3.Model.DeleteBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the DeleteBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the DeleteBucketEncryption operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
         <member name="M:Amazon.S3.IAmazonS3.DeleteBucketInventoryConfiguration(Amazon.S3.Model.DeleteBucketInventoryConfigurationRequest)">
             <summary>
             Deletes an inventory configuration (identified by the inventory ID) from the bucket.
@@ -14048,6 +14748,25 @@
             </summary>
             
             <param name="request">Container for the necessary parameters to execute the GetBucketAnalyticsConfiguration operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
+        <member name="M:Amazon.S3.IAmazonS3.GetBucketEncryption(Amazon.S3.Model.GetBucketEncryptionRequest)">
+            <summary>
+            Returns the server-side encryption configuration of a bucket.
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the GetBucketEncryption service method.</param>
+            
+            <returns>The response from the GetBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.IAmazonS3.GetBucketEncryptionAsync(Amazon.S3.Model.GetBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the GetBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the GetBucketEncryption operation.</param>
             <param name="cancellationToken">
                 A cancellation token that can be used by other objects or threads to receive notice of cancellation.
             </param>
@@ -15169,6 +15888,26 @@
             </param>
             <returns>The task object representing the asynchronous operation.</returns>
         </member>
+        <member name="M:Amazon.S3.IAmazonS3.PutBucketEncryption(Amazon.S3.Model.PutBucketEncryptionRequest)">
+            <summary>
+            Creates a new server-side encryption configuration (or replaces an existing one, if
+            present).
+            </summary>
+            <param name="request">Container for the necessary parameters to execute the PutBucketEncryption service method.</param>
+            
+            <returns>The response from the PutBucketEncryption service method, as returned by S3.</returns>
+        </member>
+        <member name="M:Amazon.S3.IAmazonS3.PutBucketEncryptionAsync(Amazon.S3.Model.PutBucketEncryptionRequest,System.Threading.CancellationToken)">
+            <summary>
+            Initiates the asynchronous execution of the PutBucketEncryption operation.
+            </summary>
+            
+            <param name="request">Container for the necessary parameters to execute the PutBucketEncryption operation.</param>
+            <param name="cancellationToken">
+                A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+            </param>
+            <returns>The task object representing the asynchronous operation.</returns>
+        </member>
         <member name="M:Amazon.S3.IAmazonS3.PutBucketInventoryConfiguration(Amazon.S3.Model.PutBucketInventoryConfigurationRequest)">
             <summary>
             Adds an inventory configuration (identified by the inventory ID) from the bucket.
@@ -15855,6 +16594,47 @@
         <member name="T:Amazon.S3.Transfer.BaseUploadRequest">
             <summary>
             The base class TransferUtility request classes.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.Transfer.Internal.BaseCommand.WhenAllOrFirstExceptionAsync``1(System.Collections.Generic.List{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
+            <summary>
+             Waits for all of the tasks to complete or till any task fails.
+            </summary>        
+        </member>
+        <member name="M:Amazon.S3.Transfer.Internal.BaseCommand.WhenAllOrFirstExceptionAsync(System.Collections.Generic.List{System.Threading.Tasks.Task},System.Threading.CancellationToken)">
+            <summary>
+            Waits for all of the tasks to complete or till any task fails.
+            </summary>        
+        </member>
+        <member name="M:Amazon.S3.Transfer.Internal.DownloadCommand.ByteRangeRemainingForDownload(System.String)">
+            <summary>
+            Returns the amount of bytes remaining that need to be pulled down from S3.
+            </summary>
+            <param name="filepath">The fully qualified path of the file.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Amazon.S3.Transfer.Internal.MultipartUploadCommand">
+            <summary>
+            The command to manage an upload using the S3 multipart API.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.Transfer.Internal.MultipartUploadCommand.#ctor(Amazon.S3.IAmazonS3,Amazon.S3.Transfer.TransferUtilityConfig,Amazon.S3.Transfer.TransferUtilityUploadRequest)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Amazon.S3.Transfer.Internal.MultipartUploadCommand"/> class.
+            </summary>
+            <param name="s3Client">The s3 client.</param>
+            <param name="config">The config object that has the number of threads to use.</param>
+            <param name="fileTransporterRequest">The file transporter request.</param>
+        </member>
+        <member name="T:Amazon.S3.Transfer.Internal.SimpleUploadCommand">
+            <summary>
+            This command is for doing regular PutObject requests.
+            </summary>
+        </member>
+        <member name="T:Amazon.S3.Transfer.Internal.UploadDirectoryCommand">
+            <summary>
+            This command files all the files that meets the criteria specified in the TransferUtilityUploadDirectoryRequest request
+            and uploads them.
             </summary>
         </member>
         <member name="T:Amazon.S3.Transfer.ITransferUtility">
@@ -17678,6 +18458,11 @@
             The collection of meta data for the request.
             </summary>
         </member>
+        <member name="P:Amazon.S3.Transfer.TransferUtilityUploadRequest.TagSet">
+            <summary>
+            The tag-set for the object.
+            </summary>
+        </member>
         <member name="E:Amazon.S3.Transfer.TransferUtilityUploadRequest.UploadProgressEvent">
             <summary>
             The event for UploadProgressEvent notifications. All
@@ -17796,47 +18581,6 @@
         <member name="P:Amazon.S3.Transfer.UploadProgressArgs.FilePath">
             <summary>
             Gets the FilePath.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.Transfer.Internal.BaseCommand.WhenAllOrFirstExceptionAsync``1(System.Collections.Generic.List{System.Threading.Tasks.Task{``0}},System.Threading.CancellationToken)">
-            <summary>
-             Waits for all of the tasks to complete or till any task fails.
-            </summary>        
-        </member>
-        <member name="M:Amazon.S3.Transfer.Internal.BaseCommand.WhenAllOrFirstExceptionAsync(System.Collections.Generic.List{System.Threading.Tasks.Task},System.Threading.CancellationToken)">
-            <summary>
-            Waits for all of the tasks to complete or till any task fails.
-            </summary>        
-        </member>
-        <member name="M:Amazon.S3.Transfer.Internal.DownloadCommand.ByteRangeRemainingForDownload(System.String)">
-            <summary>
-            Returns the amount of bytes remaining that need to be pulled down from S3.
-            </summary>
-            <param name="filepath">The fully qualified path of the file.</param>
-            <returns></returns>
-        </member>
-        <member name="T:Amazon.S3.Transfer.Internal.MultipartUploadCommand">
-            <summary>
-            The command to manage an upload using the S3 multipart API.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.Transfer.Internal.MultipartUploadCommand.#ctor(Amazon.S3.IAmazonS3,Amazon.S3.Transfer.TransferUtilityConfig,Amazon.S3.Transfer.TransferUtilityUploadRequest)">
-            <summary>
-            Initializes a new instance of the <see cref="T:Amazon.S3.Transfer.Internal.MultipartUploadCommand"/> class.
-            </summary>
-            <param name="s3Client">The s3 client.</param>
-            <param name="config">The config object that has the number of threads to use.</param>
-            <param name="fileTransporterRequest">The file transporter request.</param>
-        </member>
-        <member name="T:Amazon.S3.Transfer.Internal.SimpleUploadCommand">
-            <summary>
-            This command is for doing regular PutObject requests.
-            </summary>
-        </member>
-        <member name="T:Amazon.S3.Transfer.Internal.UploadDirectoryCommand">
-            <summary>
-            This command files all the files that meets the criteria specified in the TransferUtilityUploadDirectoryRequest request
-            and uploads them.
             </summary>
         </member>
         <member name="T:Amazon.S3.Transfer.TransferUtilityDownloadDirectoryRequest">
@@ -18178,6 +18922,18 @@
             </summary>
             <returns>true if there is the CannedACL property is set.</returns>
         </member>
+        <member name="P:Amazon.S3.Transfer.TransferUtilityUploadDirectoryRequest.ContentType">
+            <summary>
+            	Gets or sets the content type for the uploaded Amazon S3 objects.
+                The default behavior when this field is not set is to use the file
+                extension to set the content type. If this field is set to a value it
+                will be applied to all uploaded files in the directory, overriding
+                file extension inspection.
+            </summary>
+            <value>
+            	The content type for all the uploaded Amazon S3 objects.
+            </value>
+        </member>
         <member name="P:Amazon.S3.Transfer.TransferUtilityUploadDirectoryRequest.StorageClass">
             <summary>
             	Gets or sets the storage class for the uploaded Amazon S3 objects.
@@ -18255,6 +19011,11 @@
             Causes the UploadDirectoryProgressEvent event to be fired.
             </summary>
             <param name="uploadDirectoryProgress">Progress data for files currently being uploaded.</param>
+        </member>
+        <member name="P:Amazon.S3.Transfer.TransferUtilityUploadDirectoryRequest.TagSet">
+            <summary>
+            Tags that will be applied to all objects in the diretory.
+            </summary>
         </member>
         <member name="T:Amazon.S3.Transfer.UploadDirectoryProgressArgs">
             <summary>
@@ -18568,6 +19329,12 @@
             </summary>
             <param name="pipeline"></param>
         </member>
+        <member name="M:Amazon.S3.Encryption.AmazonS3EncryptionClient.Dispose(System.Boolean)">
+            <summary>
+            Dispose this instance
+            </summary>
+            <param name="disposing"></param>
+        </member>
         <member name="T:Amazon.S3.Encryption.AmazonS3CryptoConfiguration">
             <summary>
             AmazonS3CryptoConfiguration allows customers
@@ -18624,9 +19391,8 @@
         </member>
         <member name="T:Amazon.S3.Encryption.EncryptionMaterials">
             <summary>
-            The "key encrypting key" materials used in encrypt/decryption. These
-            materials may be either an asymmetric key or a symmetric key but not
-            both.
+            The "key encrypting key" materials used in encrypt/decryption.
+            These materials may be an asymmetric key, a symmetric key, or a KMS key ID.
             </summary>
         </member>
         <member name="M:Amazon.S3.Encryption.EncryptionMaterials.#ctor(System.Security.Cryptography.AsymmetricAlgorithm)">
@@ -18641,6 +19407,12 @@
             </summary>
             <param name="algorithm"></param>
         </member>
+        <member name="M:Amazon.S3.Encryption.EncryptionMaterials.#ctor(System.String)">
+            <summary>
+            Constructs a new EncryptionMaterials object, storing a KMS Key ID
+            </summary>
+            <param name="kmsKeyID"></param>
+        </member>
         <member name="T:Amazon.S3.Encryption.EncryptionUtils">
             <summary>
             The EncryptionUtils class encrypts and decrypts data stored in S3.
@@ -18648,13 +19420,7 @@
             and to decrypt objects that are retrieved from S3.
             </summary>
         </member>
-        <member name="F:Amazon.S3.Encryption.EncryptionUtils.keyInMetadata">
-            <summary>
-            Encrypts a Envelope key using the provided encryption materials
-            and returns it in raw byte array form.
-            </summary>
-        </member>
-        <member name="M:Amazon.S3.Encryption.EncryptionUtils.DecryptEnvelopeKey(System.Byte[],Amazon.S3.Encryption.EncryptionMaterials)">
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.DecryptNonKMSEnvelopeKey(System.Byte[],Amazon.S3.Encryption.EncryptionMaterials)">
             <summary>
             Decrypts an encrypted Envelope key using the provided encryption materials
             and returns it in raw byte array form.
@@ -18705,9 +19471,40 @@
             The instruction that will be used to encrypt the object data.
             </param>
         </member>
-        <member name="M:Amazon.S3.Encryption.EncryptionUtils.GenerateInstructions(Amazon.S3.Encryption.EncryptionMaterials)">
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.GenerateInstructionsForKMSMaterials(Amazon.Runtime.SharedInterfaces.ICoreAmazonKMS,Amazon.S3.Encryption.EncryptionMaterials)">
             <summary>
-             Generates an instruction that will be used to encrypt an object.
+            Generates an instruction that will be used to encrypt an object
+            using materials with the KMSKeyID set.
+            </summary>
+            <param name="kmsClient">
+            Used to call KMS to generate a data key.
+            </param>
+            <param name="materials">
+            The encryption materials to be used to encrypt and decrypt data.
+            </param>
+            <returns>
+            The instruction that will be used to encrypt an object.
+            </returns>
+        </member>
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.GenerateInstructionsForKMSMaterialsAsync(Amazon.Runtime.SharedInterfaces.ICoreAmazonKMS,Amazon.S3.Encryption.EncryptionMaterials)">
+            <summary>
+            Generates an instruction that will be used to encrypt an object
+            using materials with the KMSKeyID set.
+            </summary>
+            <param name="kmsClient">
+            Used to call KMS to generate a data key.
+            </param>
+            <param name="materials">
+            The encryption materials to be used to encrypt and decrypt data.
+            </param>
+            <returns>
+            The instruction that will be used to encrypt an object.
+            </returns>
+        </member>
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.GenerateInstructionsForNonKMSMaterials(Amazon.S3.Encryption.EncryptionMaterials)">
+            <summary>
+            Generates an instruction that will be used to encrypt an object
+            using materials with the AsymmetricProvider or SymmetricProvider set.
             </summary>
             <param name="materials">
             The encryption materials to be used to encrypt and decrypt data.
@@ -18716,7 +19513,7 @@
             The instruction that will be used to encrypt an object.
             </returns>
         </member>
-        <member name="M:Amazon.S3.Encryption.EncryptionUtils.BuildInstructionsFromObjectMetadata(Amazon.S3.Model.GetObjectResponse,Amazon.S3.Encryption.EncryptionMaterials)">
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.BuildInstructionsFromObjectMetadata(Amazon.S3.Model.GetObjectResponse,Amazon.S3.Encryption.EncryptionMaterials,System.Byte[])">
             <summary>
              Builds an instruction object from the object metadata.
             </summary>
@@ -18725,6 +19522,9 @@
             </param>
             <param name="materials">
             The non-null encryption materials to be used to encrypt and decrypt Envelope key.
+            </param>
+            <param name="decryptedEnvelopeKeyKMS">
+            The decrypted envelope key to be use if KMS key wrapping is being used.  Or null if non-KMS key wrapping is being used.
             </param>
             <returns>
             </returns>
@@ -18741,7 +19541,7 @@
             A non-null instruction object containing encryption information.
             </returns>
         </member>
-        <member name="M:Amazon.S3.Encryption.EncryptionUtils.UpdateMetadataWithEncryptionInstructions(Amazon.Runtime.AmazonWebServiceRequest,Amazon.S3.Encryption.EncryptionInstructions)">
+        <member name="M:Amazon.S3.Encryption.EncryptionUtils.UpdateMetadataWithEncryptionInstructions(Amazon.Runtime.AmazonWebServiceRequest,Amazon.S3.Encryption.EncryptionInstructions,System.Boolean)">
             <summary>
             Update the request's ObjectMetadata with the necessary information for decrypting the object.
             </summary>
@@ -18750,6 +19550,9 @@
             </param>
             <param name="instructions">
             Non-null instruction used to encrypt the data in this AmazonWebServiceRequest .
+            </param>
+            <param name="useV2Metadata">
+            If true use V2 metadata format, otherwise use V1.
             </param>
         </member>
         <member name="M:Amazon.S3.Encryption.EncryptionUtils.AddUnencryptedContentLengthToMetadata(Amazon.S3.Model.PutObjectRequest)">
@@ -18796,6 +19599,12 @@
             <param name="executionContext">The execution context which contains both the
             requests and response context.</param>
         </member>
+        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.PostInvoke(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Decrypt the object being downloaded.
+            </summary>
+            <param name="executionContext"></param>
+        </member>
         <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.InvokeAsync``1(Amazon.Runtime.IExecutionContext)">
             <summary>
             Calls the and post invoke logic after calling the next handler 
@@ -18806,11 +19615,18 @@
             request and response context.</param>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.PostInvoke(Amazon.Runtime.IExecutionContext)">
+        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.PostInvokeAsync(Amazon.Runtime.IExecutionContext)">
             <summary>
             Decrypt the object being downloaded.
             </summary>
             <param name="executionContext"></param>
+        </member>
+        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.PostInvokeSynchronous(Amazon.Runtime.IExecutionContext,System.Byte[])">
+            <summary>
+            Decrypt the object being downloaded.
+            </summary>
+            <param name="executionContext"></param>
+            <param name="decryptedEnvelopeKeyKMS"></param>
         </member>
         <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.DecryptObjectUsingInstructionFile(Amazon.S3.Model.GetObjectResponse,Amazon.S3.Model.GetObjectResponse)">
             <summary>
@@ -18823,12 +19639,15 @@
             The getObject response whose contents are to be decrypted.
             </param>
         </member>
-        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.DecryptObjectUsingMetadata(Amazon.S3.Model.GetObjectResponse)">
+        <member name="M:Amazon.S3.Encryption.Internal.SetupDecryptionHandler.DecryptObjectUsingMetadata(Amazon.S3.Model.GetObjectResponse,System.Byte[])">
             <summary>
             Updates object where the object input stream contains the decrypted contents.
             </summary>
             <param name="objectResponse">
             The getObject response whose contents are to be decrypted.
+            </param>
+            <param name="decryptedEnvelopeKeyKMS">
+            The decrypted envelope key to be use if KMS key wrapping is being used.  Or null if non-KMS key wrapping is being used.
             </param>
         </member>
         <member name="T:Amazon.S3.Encryption.Internal.SetupEncryptionHandler">
@@ -18855,6 +19674,12 @@
             <param name="executionContext">The execution context which contains both the
             requests and response context.</param>
         </member>
+        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.PreInvoke(Amazon.Runtime.IExecutionContext)">
+            <summary>
+            Encrypts the S3 object being uploaded.
+            </summary>
+            <param name="executionContext"></param>
+        </member>
         <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.InvokeAsync``1(Amazon.Runtime.IExecutionContext)">
             <summary>
             Calls pre invoke logic before calling the next handler 
@@ -18865,13 +19690,19 @@
             request and response context.</param>
             <returns>A task that represents the asynchronous operation.</returns>
         </member>
-        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.PreInvoke(Amazon.Runtime.IExecutionContext)">
+        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.PreInvokeAsync(Amazon.Runtime.IExecutionContext)">
             <summary>
             Encrypts the S3 object being uploaded.
             </summary>
             <param name="executionContext"></param>
         </member>
-        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.GenerateEncryptedObjectRequestUsingMetadata(Amazon.S3.Model.PutObjectRequest)">
+        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.ValidateConfigAndMaterials">
+            <summary>
+            Make sure that the storage mode and encryption materials are compatible.
+            The client only supports KMS key wrapping in metadata storage mode.
+            </summary>
+        </member>
+        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.GenerateEncryptedObjectRequestUsingMetadata(Amazon.S3.Model.PutObjectRequest,Amazon.S3.Encryption.EncryptionInstructions)">
             <summary>
             Updates the request where the metadata contains encryption information 
             and the input stream contains the encrypted object contents.
@@ -18880,7 +19711,7 @@
             The request whose contents are to be encrypted.
             </param>
         </member>
-        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.GenerateEncryptedObjectRequestUsingInstructionFile(Amazon.S3.Model.PutObjectRequest)">
+        <member name="M:Amazon.S3.Encryption.Internal.SetupEncryptionHandler.GenerateEncryptedObjectRequestUsingInstructionFile(Amazon.S3.Model.PutObjectRequest,Amazon.S3.Encryption.EncryptionInstructions)">
             <summary>
             Updates the request where the instruction file contains encryption information 
             and the input stream contains the encrypted object contents.
@@ -19410,7 +20241,7 @@
         </member>
         <member name="P:Amazon.S3.IO.S3FileInfo.LastWriteTimeUtc">
             <summary>
-            Returns the last time the fule was modified in UTC.
+            Returns the last time the file was modified in UTC.
             </summary>
             <exception cref="T:System.Net.WebException"></exception>
             <exception cref="T:Amazon.S3.AmazonS3Exception"></exception>

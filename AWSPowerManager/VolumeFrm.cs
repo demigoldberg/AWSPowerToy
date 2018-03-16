@@ -10,15 +10,16 @@ using System.Windows.Forms;
 
 namespace AWSPowerManager
 {
-    public partial class InstanceType : Form
+    public partial class VolumeFrm : Form
     {
-        public InstanceType()
+        public VolumeFrm()
         {
             InitializeComponent();
+        }
 
-           
-       
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

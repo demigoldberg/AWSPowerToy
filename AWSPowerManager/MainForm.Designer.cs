@@ -48,19 +48,22 @@
             this.RDPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RDPPublicIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SSHToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sSHPublicIPToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rebootToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createImageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.terminateInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyInstanceTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.newInstanceLikeThisWithChangesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.instanceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EC2MultiSelectContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.rebootInstancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startInstancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopInstancesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modifyInstanceTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.instanceInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.newInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.terminateInstanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addDiskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.EC2WincontextMenuStrip.SuspendLayout();
             this.EC2MultiSelectContextMenuStrip.SuspendLayout();
@@ -70,7 +73,7 @@
             // 
             this.EC2listView.Location = new System.Drawing.Point(321, 43);
             this.EC2listView.Name = "EC2listView";
-            this.EC2listView.Size = new System.Drawing.Size(819, 384);
+            this.EC2listView.Size = new System.Drawing.Size(958, 384);
             this.EC2listView.TabIndex = 2;
             this.EC2listView.UseCompatibleStateImageBehavior = false;
             this.EC2listView.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.EC2listView_ColumnClick);
@@ -132,7 +135,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1155, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1291, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -147,7 +150,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -164,14 +167,14 @@
             // 
             this.refreshToolStripMenuItem.Name = "refreshToolStripMenuItem";
             this.refreshToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.refreshToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.refreshToolStripMenuItem.Text = "Refresh";
             this.refreshToolStripMenuItem.Click += new System.EventHandler(this.refreshToolStripMenuItem_Click);
             // 
             // preferencesToolStripMenuItem
             // 
             this.preferencesToolStripMenuItem.Name = "preferencesToolStripMenuItem";
-            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.preferencesToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.preferencesToolStripMenuItem.Text = "Preferences";
             this.preferencesToolStripMenuItem.Click += new System.EventHandler(this.preferencesToolStripMenuItem_Click);
             // 
@@ -186,7 +189,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -196,6 +199,7 @@
             this.RDPToolStripMenuItem,
             this.RDPPublicIPToolStripMenuItem,
             this.SSHToolStripMenuItem,
+            this.sSHPublicIPToolStripMenuItem,
             this.rebootToolStripMenuItem,
             this.startInstanceToolStripMenuItem,
             this.stopInstanceToolStripMenuItem,
@@ -203,59 +207,103 @@
             this.terminateInstanceToolStripMenuItem,
             this.modifyInstanceTypeToolStripMenuItem,
             this.newInstanceToolStripMenuItem,
-            this.instanceInfoToolStripMenuItem});
+            this.newInstanceLikeThisWithChangesToolStripMenuItem,
+            this.instanceInfoToolStripMenuItem,
+            this.addDiskToolStripMenuItem});
             this.EC2WincontextMenuStrip.Name = "EC2WincontextMenuStrip";
-            this.EC2WincontextMenuStrip.Size = new System.Drawing.Size(189, 246);
+            this.EC2WincontextMenuStrip.Size = new System.Drawing.Size(262, 334);
             this.EC2WincontextMenuStrip.Opening += new System.ComponentModel.CancelEventHandler(this.EC2WincontextMenuStrip_Opening);
             // 
             // RDPToolStripMenuItem
             // 
             this.RDPToolStripMenuItem.Name = "RDPToolStripMenuItem";
-            this.RDPToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.RDPToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RDPToolStripMenuItem.Text = "RDP Private IP";
             this.RDPToolStripMenuItem.Click += new System.EventHandler(this.rDPToolStripMenuItem_Click);
             // 
             // RDPPublicIPToolStripMenuItem
             // 
             this.RDPPublicIPToolStripMenuItem.Name = "RDPPublicIPToolStripMenuItem";
-            this.RDPPublicIPToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.RDPPublicIPToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.RDPPublicIPToolStripMenuItem.Text = "RDP Public IP";
             this.RDPPublicIPToolStripMenuItem.Click += new System.EventHandler(this.rDPPublicIPToolStripMenuItem_Click);
             // 
             // SSHToolStripMenuItem
             // 
             this.SSHToolStripMenuItem.Name = "SSHToolStripMenuItem";
-            this.SSHToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.SSHToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.SSHToolStripMenuItem.Text = "SSH Private IP";
             this.SSHToolStripMenuItem.Click += new System.EventHandler(this.sSHToolStripMenuItem_Click);
+            // 
+            // sSHPublicIPToolStripMenuItem
+            // 
+            this.sSHPublicIPToolStripMenuItem.Name = "sSHPublicIPToolStripMenuItem";
+            this.sSHPublicIPToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.sSHPublicIPToolStripMenuItem.Text = "SSH Public IP";
+            this.sSHPublicIPToolStripMenuItem.Click += new System.EventHandler(this.sSHPublicIPToolStripMenuItem_Click);
             // 
             // rebootToolStripMenuItem
             // 
             this.rebootToolStripMenuItem.Name = "rebootToolStripMenuItem";
-            this.rebootToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.rebootToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.rebootToolStripMenuItem.Text = "Reboot Instance";
             this.rebootToolStripMenuItem.Click += new System.EventHandler(this.rebootToolStripMenuItem_Click);
             // 
             // startInstanceToolStripMenuItem
             // 
             this.startInstanceToolStripMenuItem.Name = "startInstanceToolStripMenuItem";
-            this.startInstanceToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.startInstanceToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.startInstanceToolStripMenuItem.Text = "Start Instance";
             this.startInstanceToolStripMenuItem.Click += new System.EventHandler(this.startInstanceToolStripMenuItem_Click);
             // 
             // stopInstanceToolStripMenuItem
             // 
             this.stopInstanceToolStripMenuItem.Name = "stopInstanceToolStripMenuItem";
-            this.stopInstanceToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.stopInstanceToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.stopInstanceToolStripMenuItem.Text = "Stop Instance";
             this.stopInstanceToolStripMenuItem.Click += new System.EventHandler(this.stopInstanceToolStripMenuItem_Click);
             // 
             // createImageToolStripMenuItem
             // 
             this.createImageToolStripMenuItem.Name = "createImageToolStripMenuItem";
-            this.createImageToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.createImageToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
             this.createImageToolStripMenuItem.Text = "Create Image";
             this.createImageToolStripMenuItem.Click += new System.EventHandler(this.createImageToolStripMenuItem_Click);
+            // 
+            // terminateInstanceToolStripMenuItem
+            // 
+            this.terminateInstanceToolStripMenuItem.Name = "terminateInstanceToolStripMenuItem";
+            this.terminateInstanceToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.terminateInstanceToolStripMenuItem.Text = "Terminate Instance";
+            this.terminateInstanceToolStripMenuItem.Click += new System.EventHandler(this.terminateInstanceToolStripMenuItem_Click);
+            // 
+            // modifyInstanceTypeToolStripMenuItem
+            // 
+            this.modifyInstanceTypeToolStripMenuItem.Name = "modifyInstanceTypeToolStripMenuItem";
+            this.modifyInstanceTypeToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.modifyInstanceTypeToolStripMenuItem.Text = "Modify Instance Type";
+            this.modifyInstanceTypeToolStripMenuItem.Click += new System.EventHandler(this.modifyInstanceTypeToolStripMenuItem_Click);
+            // 
+            // newInstanceToolStripMenuItem
+            // 
+            this.newInstanceToolStripMenuItem.Name = "newInstanceToolStripMenuItem";
+            this.newInstanceToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.newInstanceToolStripMenuItem.Text = "New Instance like this";
+            this.newInstanceToolStripMenuItem.Click += new System.EventHandler(this.newInstanceToolStripMenuItem_Click);
+            // 
+            // newInstanceLikeThisWithChangesToolStripMenuItem
+            // 
+            this.newInstanceLikeThisWithChangesToolStripMenuItem.Name = "newInstanceLikeThisWithChangesToolStripMenuItem";
+            this.newInstanceLikeThisWithChangesToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.newInstanceLikeThisWithChangesToolStripMenuItem.Text = "New Instance like this with changes";
+            this.newInstanceLikeThisWithChangesToolStripMenuItem.Click += new System.EventHandler(this.newInstanceLikeThisWithChangesToolStripMenuItem_Click);
+            // 
+            // instanceInfoToolStripMenuItem
+            // 
+            this.instanceInfoToolStripMenuItem.Name = "instanceInfoToolStripMenuItem";
+            this.instanceInfoToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.instanceInfoToolStripMenuItem.Text = "instance info";
+            this.instanceInfoToolStripMenuItem.Click += new System.EventHandler(this.instanceInfoToolStripMenuItem_Click);
             // 
             // EC2MultiSelectContextMenuStrip
             // 
@@ -295,39 +343,18 @@
             this.createImagesToolStripMenuItem.Text = "Create Images";
             this.createImagesToolStripMenuItem.Click += new System.EventHandler(this.createImagesToolStripMenuItem_Click);
             // 
-            // modifyInstanceTypeToolStripMenuItem
+            // addDiskToolStripMenuItem
             // 
-            this.modifyInstanceTypeToolStripMenuItem.Name = "modifyInstanceTypeToolStripMenuItem";
-            this.modifyInstanceTypeToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.modifyInstanceTypeToolStripMenuItem.Text = "Modify Instance Type";
-            this.modifyInstanceTypeToolStripMenuItem.Click += new System.EventHandler(this.modifyInstanceTypeToolStripMenuItem_Click);
-            // 
-            // instanceInfoToolStripMenuItem
-            // 
-            this.instanceInfoToolStripMenuItem.Name = "instanceInfoToolStripMenuItem";
-            this.instanceInfoToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.instanceInfoToolStripMenuItem.Text = "instance info";
-            this.instanceInfoToolStripMenuItem.Click += new System.EventHandler(this.instanceInfoToolStripMenuItem_Click);
-            // 
-            // newInstanceToolStripMenuItem
-            // 
-            this.newInstanceToolStripMenuItem.Name = "newInstanceToolStripMenuItem";
-            this.newInstanceToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.newInstanceToolStripMenuItem.Text = "New Instance like this";
-            this.newInstanceToolStripMenuItem.Click += new System.EventHandler(this.newInstanceToolStripMenuItem_Click);
-            // 
-            // terminateInstanceToolStripMenuItem
-            // 
-            this.terminateInstanceToolStripMenuItem.Name = "terminateInstanceToolStripMenuItem";
-            this.terminateInstanceToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.terminateInstanceToolStripMenuItem.Text = "Terminate Instance";
-            this.terminateInstanceToolStripMenuItem.Click += new System.EventHandler(this.terminateInstanceToolStripMenuItem_Click);
+            this.addDiskToolStripMenuItem.Name = "addDiskToolStripMenuItem";
+            this.addDiskToolStripMenuItem.Size = new System.Drawing.Size(261, 22);
+            this.addDiskToolStripMenuItem.Text = "Add disk";
+            this.addDiskToolStripMenuItem.Click += new System.EventHandler(this.addDiskToolStripMenuItem_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1155, 522);
+            this.ClientSize = new System.Drawing.Size(1291, 522);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.instanseslabel);
             this.Controls.Add(this.regionslabel);
@@ -382,6 +409,9 @@
         private System.Windows.Forms.ToolStripMenuItem instanceInfoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newInstanceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem terminateInstanceToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem newInstanceLikeThisWithChangesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sSHPublicIPToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addDiskToolStripMenuItem;
     }
 }
 

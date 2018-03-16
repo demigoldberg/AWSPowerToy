@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1DC2050A-2152-436F-BA35-A9F7986F8AFF}</ProjectGuid>
+    <ProjectGuid>{19548CF3-9685-4E6E-9712-C50E6C2123DA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AWSPowerManager</RootNamespace>
@@ -87,11 +87,11 @@
     <Compile Include="InstanceType.Designer.cs">
       <DependentUpon>InstanceType.cs</DependentUpon>
     </Compile>
-    <Compile Include="InstanceTypesFrm.cs">
+    <Compile Include="InstanceConfigFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InstanceTypesFrm.Designer.cs">
-      <DependentUpon>InstanceTypesFrm.cs</DependentUpon>
+    <Compile Include="InstanceConfigFrm.Designer.cs">
+      <DependentUpon>InstanceConfigFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -107,14 +107,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VolumeFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VolumeFrm.Designer.cs">
+      <DependentUpon>VolumeFrm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="infoFrm.resx">
       <DependentUpon>infoFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InstanceType.resx">
       <DependentUpon>InstanceType.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InstanceTypesFrm.resx">
-      <DependentUpon>InstanceTypesFrm.cs</DependentUpon>
+    <EmbeddedResource Include="InstanceConfigFrm.resx">
+      <DependentUpon>InstanceConfigFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -132,6 +138,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VolumeFrm.resx">
+      <DependentUpon>VolumeFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
